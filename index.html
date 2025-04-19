@@ -1,41 +1,266 @@
-## Portfolio
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APS | Naik's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Ganesh Naik</div>
+            <ul class="nav-links">
+                <li><a href="#AboutMe">About me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#domain">Domain description</a></li>
+                <li><a href="#Business-cases">Business Cases</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#details">Details</a></li>
+            </ul>
+        </div>
+    </nav>
 
-### Hello, I'm [Your Name] 👋
+    <header class="hero">
+        <h1>Hello, I am Ganesh Naik</h1>
+        <h2>Computer Science Engineer</h2>
+        <p>Ready to debug challenges and deploy impactful solutions</p>
+    </header>
 
-I am passionate about technology and problem-solving. Here's a glimpse of my work:
+    <main class="section">
+        <section id="AboutMe" class="sub-section">
+            <h2>About Me</h2>
+            <p id="aboutme-info">
+                I am a dedicated computer science student with a strong foundation in Data Structures, Databases, Networking and Development with a focus on building innovative, reliable and efficient solutions.
 
-## 🛠️ Projects
-- **Project 1**: A short description of your project.
-- **Project 2**: A short description of another project.
+                Fascinated by Netflix’s work in personalization recommendations, interactive storytelling and AI-driven content systems, I aim to contribute to technologies that redefine entertainment and create meaningful, global impact through seamless and intelligent user experiences.
+            </p>
+        </section>
 
-## 🚀 Skills
-- C++, Python, JavaScript
-- Data Structures and Algorithms
-- Web Development (React.js, Node.js)
+        <section class="sub-section">
+            <h2>Education</h2>
+            <div id="education" class="education-content">
+                <div class="education-item">
+                    <h3>Bachelor of Engineering in Computer Science</h3>
+                    <p class="edu-institute">KLE Technological University</p>
+                    <p class="edu-institute">Hubballi, Karnataka</p>
+                    <p class="edu-year">Graduation: 2026</p>
+                    <p class="edu-grade">CGPA: 8.18</p>
+                </div>
+            </div>
+        </section>
 
-## 🌐 Find Me Online
-- [GitHub](https://github.com/your-github-username)
-- [LinkedIn](https://linkedin.com/in/your-linkedin-profile)
+        <section id="skills" class="sub-section">
+            <h2>Skills</h2>
+            <div class="skills-wrapper">
+                <div class="skill-box">
+                    <h3>Technical Skills</h3>
+                    <ul class="project2">
+                        <li>C/C++</li>
+                        <li>Python</li>
+                        <li>HTML/CSS</li>
+                        <li>SQL</li>
+                        <li>Machine Learning</li>
+                    </ul>
+                </div>
+                <div class="skill-box">
+                    <h3>Soft Skills</h3>
+                    <ul class="project2">
+                        <li>Adaptability</li>
+                        <li>Teamwork</li>
+                        <li>Problem Solving</li>
+                        <li>Leadership</li>
+                        <li>Project Management</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-## Portfolio Topic
+        <section id="projects" class="sub-section">
+            <h2>Projects</h2>
+            <ul class="project">
+                <li class="project-item">
+                    <span class="project-number">1</span>
+                    <h3 class="project-title">Layer-wise Relevance Propagation For Classifying Brain MRI Images</h3>
+                    <p class="project-desc">Developed a deep learning framework that utilizes ResNet18 to classify MRI scans into four tumor categories, while Layer-wise Relevance Propagation (LRP) enhances interpretability by generating standard, overlay, and pixel-wise heatmaps.</p>
+                    <p>Achieved 85% classification accuracy with interpretable diagnostics</p>
+                    <p>Published research paper</p>
+                    <div class="tech-used">
+                        <span class="tech-head">Technologies Used:</span>
+                        <span class="tech-item">ResNet18</span>
+                        <span class="tech-item">Layer-wise Relevance Propagation (LRP)</span>
+                        <span class="tech-item">Machine Learning</span>
+                        <span class="tech-item">Python</span>
+                    </div>
+                    <div>
+                        <br>
+                        <a href="https://drive.google.com/file/d/182KNwHkfKSYj3roSSp6fDbLcR_xQoPhN/view" target="_blank" class="project-link">Watch Research Paper Now</a>
+                    </div>
+                </li>
+                <li class="project-item">
+                    <span class="project-number">2</span>
+                    <h3 class="project-title">Electronic Voting Machine</h3>
+                    <p class="project-desc">
+                        Electronic Voting Machine using AVR Microcontroller
 
-<dl>
-<dt>Course Name</dt>
-<dd>Algorithmic Problem Solving</dd>
-<dt>Course Code</dt>
-<dd>Course Code Placeholder</dd>
-<dt>Name</dt>
-<dd>Your Name</dd>
-<dt>SRN</dt>
-<dd>Your SRN</dd>
-<dt>Course Instructor</dt>
-<dd>Instructor Name Placeholder</dd>
-<dt>University</dt>
-<dd>Your University Name</dd>
-<dt>Portfolio Topic/Domain</dt>
-<dd>Google</dd>
-</dl>
+                        Designed and developed a secure Electronic Voting Machine using an AVR ATmega microcontroller, programmed entirely in Embedded C. The system supports voter authentication via a 4-digit PIN using a keypad, with real-time feedback provided through an LCD display.</p>
+                    <p>Key Highlights:</p>
+                    <p>Secure Authentication: Masked PIN entry with validation and lockout for invalid attempts.</p>
+                    <p>Voting Interface: User-friendly selection and confirmation process.</p>
+                    <p>Result Security: Access to final vote count restricted via a master key for authorized personnel.</p>
+                    <p>Robust Logic Handling: Supports tie-breaking logic and various edge cases to ensure reliability.</p>
+                    <div class="tech-used">
+                        <span class="tech-head">Technologies Used:</span>
+                        <span class="tech-item">Atmel Studio</span>
+                        <span class="tech-item">AVR ATmega16</span>
+                        <span class="tech-item">Keypad interfacing</span>
+                        <span class="tech-item">LCD display integration</span>
+                    </div>
+                    <br>
+                    <div>
+                        <a href="https://github.com/VaishnaviBhat5/Door-Locking-System" target="_blank" class="project-link">Watch Project on GitHub Now</a>
+                    </div>
+                </li>
+                <li class="project-item">
+                    <span class="project-number">3</span>
+                    <h3 class="project-title">Deep Learning Techniques for Archaeological Image Restoration</h3>
+                    <p class="project-desc">
+                        Developed a U-Net-based Generative Adversarial Network (GAN) framework to reconstruct damaged temple images, ensuring the preservation of intricate architectural details. A custom dataset of masked images was created, and the model was trained to reconstruct missing sections while balancing adversarial and reconstruction losses for realistic outputs</p>
+                    <p>Achieved Structural Similarity Index Measure (SSIM) score of 0.7128</p>
+                    <div class="tech-used">
+                        <span class="tech-head">Technologies Used:</span>
+                        <span class="tech-item">U-NET</span>
+                        <span class="tech-item">GAN</span>
+                        <span class="tech-item">Deep Learning</span>
+                    </div>
+                    <div>
+                        <br>
+                        <a href="https://drive.google.com/file/d/1Eayr9R4nt_PTrYgcguWMfPDH3AfnObbM/view" target="_blank" class="project-link">Watch Research Paper Now</a>
+                    </div>
+                </li>
+                <li class="project-item">
+                    <span class="project-number">4</span>
+                    <h3 class="project-title">Yellove Bus Booking Assistant</h3>
+                    <p class="project-desc">
+                        Designed and implemented a bus seat booking system that allows users to register, login, book a ticket based on source destination of course on availability of seats and accordingly displays list of travelling passengers.</p>
+                    <p>Key features:</p>
+                    <p>Booking Management: (1) Checks for already-booked seats.<br>
+                        (2) Displays available buses and their timings.<br>
+                        (3) Manages user login, logout, and ticket display.<br>
+                        Student Discount: Gives a discount of 10% of the trip expense if user claims to be a student.</p>
+                    <div class="tech-used">
+                        <span class="tech-head">Techniques Used:</span>
+                        <span class="tech-item">Object Oriented Programming</span>
+                        <span class="tech-item">C++</span>
+                        <span class="tech-item">Classes and Objects</span>
+                        <span class="tech-item">Inheritance</span>
+                        <span class="tech-item">Exception Handling</span>
+                        <span class="tech-item">Virtual Functions & Polymorphism</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
 
-<br> 
-> “The only way to do great work is to love what you do.” – Steve Jobs
->
+        <section id="domain" class="sub-section">
+            <h2>Domain - Netflix</h2>
+            <p>
+                Netflix is a leading global streaming entertainment service offering a wide variety of TV shows, movies, documentaries, and original content to over 230 million subscribers worldwide. Known for its innovation in streaming technology, content creation, and personalized recommendations, Netflix continues to transform the way people consume entertainment. By leveraging cutting-edge machine learning, big data analytics, and creative content production, Netflix delivers an immersive, customized viewing experience across various platforms, including smart TVs, mobile devices, and gaming consoles.
+            </p>
+        </section>
+
+        <section id="Business-cases" class="sub-section">
+            <h2>Business Cases</h2>
+            <div class="use-case-list">
+                <div class="use-case-item">
+                    <h3>Hyper-Personalized AI Content Discovery Engine</h3>
+                    <p>
+                        Netflix’s recommendation engine is evolving into a dynamic, AI-powered personalization system that delivers content tailored precisely to each user’s unique preferences, mood, and viewing habits. By leveraging vast amounts of behavioral data and advanced deep learning models, the platform continuously refines its understanding of each viewer. This hyper-personalized approach enhances engagement, boosts retention, and ensures that users always discover content that resonates with them, creating a truly individualized entertainment experience.</p>
+                </div>
+                <div class="use-case-item">
+                    <h3>Interactive Storytelling Universe with Adaptive Narratives</h3>
+                    <p>
+                        Building upon the success of interactive titles like Black Mirror: Bandersnatch, Netflix is expanding its interactive storytelling format into a broader universe of choose-your-own-adventure experiences. These narratives dynamically adapt based on viewer choices, allowing users to influence plotlines, character arcs, and endings. By integrating gaming elements and real-time feedback into cinematic content, Netflix is pioneering a new genre of digital storytelling that deepens immersion and transforms passive viewing into active participation.</p>
+                </div>
+                <div class="use-case-item">
+                    <h3>Predictive AI-Driven Content Studio</h3>
+                    <p>
+                        Netflix is leveraging predictive analytics and machine learning to revolutionize content production and development. By analyzing global viewing trends, audience preferences, and performance data, the platform can forecast which genres, themes, and narratives are likely to succeed. AI tools assist in various stages of content creation from scriptwriting and editing to visual effects resulting in a more efficient and data-driven production pipeline. This approach increases the success rate of original titles while reducing production risks and costs.
+                    </p>
+                </div>
+                <div class="use-case-item">
+                    <h3>Global Smart Streaming Network</h3>
+                    <p>
+                        To ensure seamless viewing experiences across devices and regions, Netflix has developed a global smart streaming infrastructure optimized by cloud computing and adaptive bitrate technology. The platform intelligently adjusts video quality based on user bandwidth and device capability, minimizing buffering and maximizing playback quality. With ongoing exploration into 5G and edge computing, Netflix aims to deliver even faster and more reliable streaming, particularly in areas with lower internet connectivity, reinforcing its reputation for best-in-class user experience.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="sub-section">
+            <h2>Contact Me</h2>
+            <div class="contact-buttons">
+                <a href="https://github.com/G4016" target="_blank" class="contact-button">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="20" height="20">
+                    GitHub
+                </a>
+                <a href="mailto:ganeshnaik4016@gmail.com" class="contact-button">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="20" height="20">
+                    ganeshnaik4016@gmail.com
+                </a>
+            </div>
+            <form action="https://formsubmit.co/ganeshnaik4016@gmail.com" method="POST" class="contact-form">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Message from Portfolio Site">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Write your message here..."></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <section id="details" class="sub-section">
+            <h2>Portfolio Details</h2>
+            <div class="details-list">
+                <div class="detail-item">
+                    <dt>Course Name</dt>
+                    <dd>Algorithmic Problem Solving</dd>
+                </div>
+                <div class="detail-item">
+                    <dt>Course Code</dt>
+                    <dd>24ECSE309</dd>
+                </div>
+                <div class="detail-item">
+                    <dt>Name</dt>
+                    <dd>Ganesh Naik</dd>
+                </div>
+                <div class="detail-item">
+                    <dt>SRN</dt>
+                    <dd>01FE22BCS194</dd>
+                </div>
+                <div class="detail-item">
+                    <dt>Course Instructor</dt>
+                    <dd>Prakash Hegade</dd>
+                </div>
+                <div class="detail-item">
+                    <dt>University</dt>
+                    <dd>KLE Technological University</dd>
+                </div>
+                <div class="detail-item">
+                    <dt>Domain</dt>
+                    <dd>Netflix</dd>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
