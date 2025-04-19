@@ -1,0 +1,630 @@
+:root {
+    --color-bg: #141414; /* Netflix dark background */
+    --color-text: #ffffff; /* White text for contrast */
+    --color-accent: #e50914; /* Netflix red */
+    --color-highlight: #b3b3b3; /* Light gray for secondary elements */
+    --color-muted: #737373; /* Muted gray for subtitles */
+    --color-shadow: rgba(0, 0, 0, 0.3);
+    --primary-shade: #b20710; /* Darker red for hover */
+    --border-radius: 4px; /* Netflix's subtle rounding */
+    --hero-name-color: #ffffff;
+    --hero-tagline-bg: rgba(0, 0, 0, 0.7);
+    --section-bg: #1f1f1f; /* Slightly lighter dark for sections */
+    --project-bg: #252525; /* Distinct background for cards */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Netflix Sans approximation */
+}
+
+body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+    padding-top: 70px; /* Space for fixed navbar */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1370px;
+    margin: 0 auto;
+    padding: 0 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-highlight);
+    font-weight: 400;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-text);
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://assets.nflxext.com/ffe/siteui/vlv3/ab4b4e44-9f3b-4d2d-b140-50f0a7938748/82c0a801-7a80-4bad-b67c-7bd92325fbec/IN-en-20240902-POP_SIGNUP_TWO_WEEKS-perspective_b0b8b9f0-88ed-4f95-8ac6-f4b5cd1b0bd9_large.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 2rem 4%;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--hero-name-color);
+    margin-bottom: 1rem;
+}
+
+.hero h2 {
+    font-size: 1.8rem;
+    color: var(--color-highlight);
+    margin-bottom: 1rem;
+    border: none;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    background-color: var(--hero-tagline-bg);
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    color: var(--color-text);
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 3rem 4%;
+    max-width: 1370px;
+    margin: auto;
+}
+
+.sub-section {
+    background: var(--section-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
+}
+
+.sub-section:hover {
+    transform: translateY(-2px);
+}
+
+h2 {
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: left;
+    border: none;
+}
+
+#aboutme-info {
+    background: var(--project-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #333;
+    font-size: 1.1rem;
+    color: var(--color-highlight);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+#aboutme-info:hover {
+    transform: scale(1.02);
+}
+
+.education-content {
+    background: var(--project-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.education-content:hover {
+    transform: scale(1.02);
+}
+
+.education-item h3 {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.edu-institute, .edu-year, .edu-grade {
+    color: var(--color-highlight);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.edu-grade {
+    color: var(--color-accent);
+}
+
+.details-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.detail-item {
+    background: var(--project-bg);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.detail-item:hover {
+    transform: scale(1.02);
+}
+
+dt {
+    font-weight: 500;
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+dd {
+    color: var(--color-highlight);
+    font-size: 0.95rem;
+}
+
+ul {
+    list-style-position: inside;
+    padding-left: 0.5rem;
+}
+
+ul li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+    color: var(--color-highlight);
+}
+
+.project {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.project2 {
+    list-style: disc inside;
+    padding-left: 0.5rem;
+}
+
+h3 {
+    color: var(--color-accent);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    border: none;
+    text-align: left;
+}
+
+.project-item {
+    background-color: var(--project-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #333;
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.project-item:hover {
+    transform: scale(1.02);
+    background-color: #2a2a2a;
+}
+
+.project-number {
+    position: absolute;
+    top: 10px;
+    left: -25px;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    opacity: 0.9;
+    transform: rotate(-15deg);
+}
+
+.project-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+}
+
+.project-desc {
+    color: var(--color-highlight);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.tech-used {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.tech-head {
+    font-weight: 500;
+    color: var(--color-text);
+    margin-right: 0.5rem;
+}
+
+.tech-item {
+    background-color: #333;
+    color: var(--color-text);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.project-link {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: var(--primary-shade);
+}
+
+.project li {
+    background-color: var(--project-bg);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    border: 1px solid #333;
+}
+
+.project li:hover {
+    background-color: #2a2a2a;
+}
+
+.li-style {
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: var(--primary-shade);
+}
+
+blockquote {
+    background-color: #333;
+    padding: 1.5rem;
+    border-left: 4px solid var(--color-accent);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--color-highlight);
+    border-radius: var(--border-radius);
+    margin-top: 1.5rem;
+}
+
+.contact-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 0;
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-group {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+input,
+textarea {
+    padding: 0.75rem;
+    border: 1px solid #333;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background-color: #2a2a2a;
+    color: var(--color-text);
+}
+
+button {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: var(--primary-shade);
+}
+
+#contact {
+    text-align: center;
+    padding: 2rem 4%;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact-button {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.contact-button img {
+    margin-right: 0.5rem;
+}
+
+.contact-button:hover {
+    background-color: #444;
+}
+
+.contact-button:nth-child(1) {
+    background-color: #333; /* GitHub */
+}
+
+.contact-button:nth-child(1):hover {
+    background-color: #444;
+}
+
+.contact-button:nth-child(2) {
+    background-color: var(--color-accent); /* Email */
+}
+
+.contact-button:nth-child(2):hover {
+    background-color: var(--primary-shade);
+}
+
+.skills-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.skill-box {
+    flex: 1;
+    min-width: 280px;
+    background-color: var(--project-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #333;
+}
+
+.use-case-item {
+    background-color: var(--project-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #333;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.use-case-item:hover {
+    transform: scale(1.02);
+}
+
+.use-case-item h3 {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.use-case-item p {
+    color: var(--color-highlight);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .form-group {
+        width: 100%;
+    }
+
+    .nav-container {
+        padding: 0 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .section {
+        padding: 2rem 2rem;
+    }
+
+    .project {
+        grid-template-columns: 1fr;
+    }
+
+    .project-number {
+        font-size: 2.5rem;
+        left: -15px;
+    }
+
+    .details-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .form-group {
+        width: 90%;
+    }
+
+    .navbar {
+        height: 60px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 1rem;
+    }
+
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .project,
+    .project2 {
+        list-style: disc inside;
+        padding-left: 0.5rem;
+        display: block;
+    }
+
+    .education-content {
+        width: 100%;
+    }
+
+    .contact-form {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .project-number {
+        font-size: 2rem;
+        left: -10px;
+    }
+
+    .details-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .form-group {
+        width: 80%;
+    }
+
+    .project {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .nav-container {
+        flex-direction: row;
+    }
+
+    .nav-links {
+        flex-direction: row;
+    }
+
+    .section {
+        padding: 2rem 2rem;
+    }
+}
