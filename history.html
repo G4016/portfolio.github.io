@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Netflix | Ganesh Naik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #141414;
+            --color-text: #ffffff;
+            --color-accent: #e50914;
+            --color-highlight: #b3b3b3;
+            --color-muted: #737373;
+            --color-shadow: rgba(0, 0, 0, 0.3);
+            --primary-shade: #b20710;
+            --border-radius: 4px;
+            --section-bg: #1f1f1f;
+            --project-bg: #252525;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.5;
+            padding-top: 70px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: 1370px;
+            margin: 0 auto;
+            padding: 0 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 3rem 4%;
+            max-width: 1370px;
+            margin: auto;
+            min-height: calc(100vh - 70px);
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/originals/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h2 {
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .education-content {
+            background: var(--project-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+
+        .education-content:hover {
+            transform: scale(1.02);
+        }
+
+        .education-item h3 {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .edu-institute, .edu-year, .edu-grade {
+            color: var(--color-highlight);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-grade {
+            color: var(--color-accent);
+        }
+
+        .nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 4%;
+            max-width: 1370px;
+            margin: 2rem auto;
+            background: var(--color-bg);
+        }
+
+        .nav-arrow {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            background-color: var(--primary-shade);
+        }
+
+        @media (max-width: 767px) {
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .education-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Ganesh Naik</div>
+        </div>
+    </nav>
+
+    <main class="section">
+        <h2>History of Netflix</h2>
+        <div class="education-content">
+            <div class="education-item">
+                <h3>Foundation and Growth</h3>
+                <p class="edu-institute">Netflix was founded by Reed Hastings and Marc Randolph in 1997. It has evolved from a DVD rental service to global streaming entertainment platform. Netflix has over 230 million paid subscribers across 190 nations. It has wide variety of television series, documenteries, movies which covers diverse genres and languages.</p>                
+            </div>
+        </div>
+                <div class="education-content">
+            <div class="education-item">
+                <h3>Global Market</h3>
+                <p class="edu-institute">The global streaming market has experienced exponential growth with the advancements in technology and the spread of internet usuage. A Grand view Research report estimates the global video streaming market at USD 50.11 billion in 2020, with an expectation of compund annual growth rate (CAGR) of 21.0% by 2028. Netflix stands tall in this dynamic sector with continuous innovation, investing in original content, and excellent usuage of data analytics to improve user personalization.</p>                
+            </div>
+        </div>
+                </div>
+                <div class="education-content">
+            <div class="education-item">
+                <h3>Collaboration and Success</h3>
+                <p class="edu-institute">Netflix has built more than 35+ partners across the media business. Netflix today has millions of different types of genres for subscribers to select from and enjoy watching. <br>* Built alliances with Smart TV companies like LG and Sony for new emerging markets and several other aspects. <br> * Netflix crucial phase of converting the business from mail-in-system to streaming, Netflix established a partnership with Apple, Android, and Microsoft.<br> * Finally, Netflix joined the network and big data providers like Google and Amazon. (Amazon was accompanied to promote Netflix listings and subscription options) <br> * Netflix recently partnered with Samsung to further integrate its streaming service with Galaxy smartphones. In exchange, Samsung users will benefit from Netflix’s original shows and special bonus content.</p>                
+            </div>
+            <a href="reference.html" class="nav-arrow">[1]</a>
+        </div>
+    </main>
+
+    <div class="nav-arrows">
+        <a href="index.html" class="nav-arrow">← Previous</a>
+        <a href="index.html" class="nav-arrow">X Close History of Netflix </a>
+        <a href="portfolio-details.html" class="nav-arrow">Next →</a>
+    </div>
+</body>
+</html>

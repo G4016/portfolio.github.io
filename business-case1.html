@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Case 1 | Ganesh Naik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #141414;
+            --color-text: #ffffff;
+            --color-accent: #e50914;
+            --color-highlight: #b3b3b3;
+            --color-muted: #737373;
+            --color-shadow: rgba(0, 0, 0, 0.3);
+            --primary-shade: #b20710;
+            --border-radius: 4px;
+            --section-bg: #1f1f1f;
+            --project-bg: #252525;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.5;
+            padding-top: 70px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: 1370px;
+            margin: 0 auto;
+            padding: 0 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 3rem 4%;
+            max-width: 1370px;
+            margin: auto;
+            min-height: calc(100vh - 70px);
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/originals/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h2 {
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .business-case-item {
+            background-color: var(--project-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+
+        .business-case-item:hover {
+            transform: scale(1.02);
+        }
+
+        .business-case-title {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .business-case-desc {
+            color: var(--color-highlight);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .business-case-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+        }
+
+        .business-case-desc pre {
+            background-color: #1a1a1a;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #ffffff;
+            white-space: pre-wrap;
+        }
+
+        .business-case-desc code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 4%;
+            max-width: 1370px;
+            margin: 2rem auto;
+            background: var(--color-bg);
+        }
+
+        .nav-arrow {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            background-color: var(--primary-shade);
+        }
+
+        /* Added styles for the Watch Now button */
+        .watch-now-button {
+            background-color: var(--color-accent);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .watch-now-button:hover {
+            background-color: var(--primary-shade);
+        }
+        
+        .hidden-code {
+            display: none;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre;
+        }
+
+        @media (max-width: 767px) {
+            .section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Ganesh Naik</div>
+        </div>
+    </nav>
+
+    <main class="section">
+        <h2>Top 10 TV Shows in India</h2>
+        <div class="business-case-item">
+            <h3 class="business-case-title">What is the feature about?</h3>
+            <img src="videos/bc1.gif" alt="Business Case 1 GIF">
+            <p class="business-case-desc">Imagine watching or recommending a show that has been watched and loved by most of the people in your nation. Rather than scrolling the IDMB ratings of each movie, you get a list of Top 10 movies in India. To actually know it better we understand its not just a list but a gateway to keep people hooked by showing what's trending without endless searching.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Why this matters?</h3>
+            <p class="business-case-desc">This feature is Netflix's way of shouting "Look here what India's watching rightnow!" . It basically ranks movies and series based on what most of the users are streaming, how long do they watch and what do they actually search for? Series like Strangers Things would naturally climb the charts during their final season. By showing these trending shows, Netflix makes it easy for users to flow into popular content,sticking them to the screen. This feature promotes both new releases and hidden gems, maximizing the value of Netflix's content library.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Actors behind the scenes</h3>
+            <p class="business-case-desc">The feature is backboned by Max-Heap, a data structure that keeps most popular shows at the top, ready to be displayed at the homepage. Consider the parent node "Jaat" with a score of 98 is always more popular than Retro of score 90. We calculate popularity score for each show combining view counts, watch time, and searches then adds it into the heap. When its time to display the top 10 , it just grabs the top nodes quickly.</p>
+            <button class="watch-now-button" onclick="toggleCode('maxHeapCode')">Watch now</button>
+            <div id="maxHeapCode" class="hidden-code">
+import sys
+
+class MaxHeap:
+    def __init__(self, cap):
+        self.cap = cap
+        self.n = 0
+        self.a = [0] * (cap + 1)
+        self.a[0] = sys.maxsize
+        self.root = 1
+
+    def parent(self, i):
+        return i // 2
+
+    def left(self, i):
+        return 2 * i
+
+    def right(self, i):
+        return 2 * i + 1
+
+    def isLeaf(self, i):
+        return i > (self.n // 2) and i <= self.n
+
+    def swap(self, i, j):
+        self.a[i], self.a[j] = self.a[j], self.a[i]
+
+    def maxHeapify(self, i):
+        if not self.isLeaf(i):
+            largest = i
+            if self.left(i) <= self.n and self.a[i] < self.a[self.left(i)]:
+                largest = self.left(i)
+            if self.right(i) <= self.n and self.a[largest] < self.a[self.right(i)]:
+                largest = self.right(i)
+            if largest != i:
+                self.swap(i, largest)
+                self.maxHeapify(largest)
+
+    def insert(self, val):
+        if self.n >= self.cap:
+            return
+        self.n += 1
+        self.a[self.n] = val
+        i = self.n
+        while self.a[i] > self.a[self.parent(i)]:
+            self.swap(i, self.parent(i))
+            i = self.parent(i)
+
+    def extractMax(self):
+        if self.n == 0:
+            return None
+        max_val = self.a[self.root]
+        self.a[self.root] = self.a[self.n]
+        self.n -= 1
+        self.maxHeapify(self.root)
+        return max_val
+
+    def printHeap(self):
+        for i in range(1, (self.n // 2) + 1):
+            print(f"PARENT: {self.a[i]}", end=" ")
+            if self.left(i) <= self.n:
+                print(f"LEFT: {self.a[self.left(i)]}", end=" ")
+            if self.right(i) <= self.n:
+                print(f"RIGHT: {self.a[self.right(i)]}", end=" ")
+            print()
+
+# Example 
+if __name__ == "__main__":
+    print("The maxHeap is:")
+    h = MaxHeap(15)
+    vals = [5, 3, 17, 10, 84, 19, 6, 22, 9]
+    for val in vals:
+        h.insert(val)
+
+    h.printHeap()
+    print("The Max val is", h.extractMax())
+            </div>
+            <p class="business-case-desc"><a href="reference.html" class="nav-arrow">[2]</a></p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Visualization (Models and Figures)</h3>
+            <p class="business-case-desc">This tree keeps Jatt at the top because it has the highest score, followed by Hit Case 3 and Retro. The heap ensures we can quickly pull the top 10 shows, even from thousands of titles. The data flows like this: user views and searches feed into a scoring system, the heap ranks them, and Redis serves the list to the homepage via an API.</p>
+            <img src="images/max-heap.png" alt="Business Case 1 GIF">
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Efficiency Analysis</h3>
+            <p class="business-case-desc">The Max-Heap is a speed demon for this job. Building the heap for, say, 10,000 shows takes O(n log n) time, where n is the number of shows. Adding or updating a show’s score? That’s O(log n). Grabbing the top 10? Just O(10 log n), which is blazing fast. Removing a show (say, if it’s no longer trending) is also O(log n). For space, we need O(n) to store the heap and a dictionary to track shows, which is manageable even for Netflix’s massive catalog.
+
+Caching the top-10 list in Redis drops the query time to O(1), perfect for India’s mobile first users who expect instant results. <br> The trade-off is updating the heap frequently enough to stay current without overloading the system hourly updates strike a good balance.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Alternative Data Structures to Max-Heap</h3>
+            <p class="business-case-desc">For this case, we’re using a Max-Heap to keep the top 10 shows at our fingertips, but what if Max-Heap wasn’t an option? Let’s explore four other data structures that could do the job: Sorted Array, Binary Search Tree (BST), Priority Queue (non-heap), and Sorted Linked List, along with why Max-Heap still comes out on top.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">1) Sorted Array</h3>
+            <p class="business-case-desc">Description: Store shows in an array sorted by popularity score, highest first. <br> Complexity: Insertion/Update: O(n log n) due to sorting; Get Top-10: O(1); Space: O(n). <br> Drawback: Sorting after every update is slow for Netflix’s frequent data changes. <br>
+            <button class="watch-now-button" onclick="toggleCode('sortedArrayCode')">Watch now</button>
+            <div id="sortedArrayCode" class="hidden-code">
+class SortedArrayRanker:
+    def __init__(self):
+        self.array = []
+    def add_or_update(self, show_id, title, score):
+        for i, (sid, t, s) in enumerate(self.array):
+            if sid == show_id:
+                self.array[i] = (show_id, title, score)
+                self.array.sort(key=lambda x: x[2], reverse=True)
+                return
+        self.array.append((show_id, title, score))
+        self.array.sort(key=lambda x: x[2], reverse=True)
+    def get_top_10(self):
+        return [(title, score) for _, title, score in self.array[:10]]
+            </div>
+            </p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">2) Binary Search Tree</h3>
+            <p class="business-case-desc">Description: Store shows in a BST, ordered by score, with in-order traversal for top 10. <br> Complexity: Insertion/Update: O(log n) average, O(n) worst; Get Top-10: O(n); Space: O(n). <br> Drawback: Unbalanced BSTs can degrade to O(n), and top-10 extraction is slower than heap. <br>
+            <button class="watch-now-button" onclick="toggleCode('bstCode')">Watch now</button>
+            <div id="bstCode" class="hidden-code">
+class BSTNode:
+    def __init__(self, show_id, title, score):
+        self.show_id, self.title, self.score = show_id, title, score
+        self.left, self.right = None, None
+
+class BSTRanker:
+    def __init__(self):
+        self.root = None
+    def insert(self, show_id, title, score):
+        self.root = self._insert(self.root, show_id, title, score)
+    def _insert(self, node, show_id, title, score):
+        if not node:
+            return BSTNode(show_id, title, score)
+        if score > node.score:
+            node.left = self._insert(node.left, show_id, title, score)
+        else:
+            node.right = self._insert(node.right, show_id, title, score)
+        return node
+    def get_top_10(self):
+        result = []
+        self._inorder(self.root, result, 10)
+        return [(title, score) for title, score in result]
+    def _inorder(self, node, result, limit):
+        if node and len(result) < limit:
+            self._inorder(node.left, result, limit)
+            if len(result) < limit:
+                result.append((node.title, node.score))
+            self._inorder(node.right, result, limit)
+            </div>
+            </p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">3) Priority Queue (Non-Heap, e.g., List-Based):</h3>
+            <p class="business-case-desc">Description: Use a list as a priority queue, maintaining order manually.<br> Complexity: Insertion/Update: O(n log n); Get Top-10: O(1); Space: O(n).<br> Drawback: Similar to Sorted Array, sorting on every update is inefficient. <br>
+            <button class="watch-now-button" onclick="toggleCode('priorityQueueCode')">Watch now</button>
+            <div id="priorityQueueCode" class="hidden-code">
+class ListPQueueRanker:
+    def __init__(self):
+        self.queue = []
+    def add_or_update(self, show_id, title, score):
+        for i, (sid, t, s) in enumerate(self.queue):
+            if sid == show_id:
+                self.queue[i] = (show_id, title, score)
+                self.queue.sort(key=lambda x: x[2], reverse=True)
+                return
+        self.queue.append((show_id, title, score))
+        self.queue.sort(key=lambda x: x[2], reverse=True)
+    def get_top_10(self):
+        return [(title, score) for _, title, score in self.queue[:10]]
+            </div>
+            </p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">4) Sorted Linked List:</h3>
+            <p class="business-case-desc">Description: Store shows in a linked list, sorted by score.<br> Complexity: Insertion/Update: O(n); Get Top-10: O(1); Space: O(n). <br> Drawback: Linear insertion time is too slow for frequent updates. <br>
+            <button class="watch-now-button" onclick="toggleCode('linkedListCode')">Watch now</button>
+            <div id="linkedListCode" class="hidden-code">
+class ListNode:
+    def __init__(self, show_id, title, score):
+        self.show_id, self.title, self.score = show_id, title, score
+        self.next = None
+
+class LinkedListRanker:
+    def __init__(self):
+        self.head = None
+    def add_or_update(self, show_id, title, score):
+        if not self.head or self.head.score < score:
+            new_node = ListNode(show_id, title, score)
+            new_node.next = self.head
+            self.head = new_node
+            return
+        curr = self.head
+        while curr.next and curr.next.score >= score:
+            if curr.next.show_id == show_id:
+                curr.next.score = score
+                return
+            curr = curr.next
+        new_node = ListNode(show_id, title, score)
+        new_node.next = curr.next
+        curr.next = new_node
+    def get_top_10(self):
+        result = []
+        curr = self.head
+        for _ in range(10):
+            if not curr:
+                break
+            result.append((curr.title, curr.score))
+            curr = curr.next
+        return result
+            </div>
+            </p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Why Max-Heap is better?</h3>
+            <p class="business-case-desc">-> Efficiency: Max-Heap offers O(log n) for insertions and updates, faster than Sorted Array/ListPQueue (O(n log n)) and Sorted Linked List (O(n)). BST can match O(log n) but risks O(n) if unbalanced.
+
+<br> ->Top-10 Extraction: Max-Heap’s O(10 log n) is faster than BST’s O(n) in-order traversal, while Sorted Array/ListPQueue match O(1) for extraction but lose on updates.
+
+<br> ->Simplicity: Max-Heap is easier to maintain than BST (no balancing needed) and more efficient than Linked List for Netflix’s frequent updates.
+
+<br> ->Scalability: Combined with Redis caching, Max-Heap supports Netflix’s large-scale, real-time needs, unlike the slower alternatives.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Learnings</h3>
+            <p class="business-case-desc">The Max-Heap’s fast updates (O(log n)) keep the top-10 list accurate, so users trust Netflix to show what’s truly trending, like Stranger Things’s latest episode.
+
+Highlighting local favorites (Hit,Pushpa) taps into India’s 750 million TV viewers, boosting subscriptions.
+
+Redis caching makes the list load instantly, crucial for India’s mobile users who make up 80% of Netflix’s traffic.
+
+The heap handles thousands of shows efficiently, ready for Netflix’s growing Indian catalog, including originals like Sacred Games.
+
+Dynamic updates to the heap allow Netflix to adapt to shifting trends (e.g., reality shows gaining popularity), maintaining engagement during peak viewing times.</p>
+        </div>
+    </main>
+
+    <div class="nav-arrows">
+        <a href="project6.html" class="nav-arrow">← Previous</a>
+        <a href="index.html" class="nav-arrow">X Close Business Case </a>
+        <a href="business-case2.html" class="nav-arrow">Next →</a>
+    </div>
+
+    <script>
+        function toggleCode(id) {
+            var code = document.getElementById(id);
+            if (code.style.display === "block") {
+                code.style.display = "none";
+            } else {
+                code.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Case 7: Audio and Subtitles Switching | Netflix Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #141414;
+            --color-text: #ffffff;
+            --color-accent: #e50914;
+            --color-highlight: #b3b3b3;
+            --color-muted: #737373;
+            --color-shadow: rgba(0, 0, 0, 0.3);
+            --primary-shade: #b20710;
+            --border-radius: 4px;
+            --section-bg: #1f1f1f;
+            --project-bg: #252525;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.5;
+            padding-top: 70px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: 1370px;
+            margin: 0 auto;
+            padding: 0 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 3rem 4%;
+            max-width: 1370px;
+            margin: auto;
+            min-height: calc(100vh - 70px);
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/originals/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h2 {
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .business-case-item {
+            background-color: var(--project-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+
+        .business-case-item:hover {
+            transform: scale(1.02);
+        }
+
+        .business-case-title {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .business-case-desc {
+            color: var(--color-highlight);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .business-case-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+        }
+
+        .business-case-desc pre {
+            background-color: #1a1a1a;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #ffffff;
+            white-space: pre-wrap;
+        }
+
+        .business-case-desc code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 4%;
+            max-width: 1370px;
+            margin: 2rem auto;
+            background: var(--color-bg);
+        }
+
+        .nav-arrow {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            background-color: var(--primary-shade);
+        }
+
+        /* Added styles for the Watch Now button */
+        .watch-now-button {
+            background-color: var(--color-accent);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .watch-now-button:hover {
+            background-color: var(--primary-shade);
+        }
+        
+        .hidden-code {
+            display: none;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre;
+        }
+
+        @media (max-width: 767px) {
+            .section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">GANESH NAIK</div>
+        </div>
+    </nav>
+
+    <main class="section">
+        <h2>Audio and Subtitles Switching</h2>
+        <div class="business-case-item">
+            <h3 class="business-case-title">What is the Feature About?</h3>
+            <img src="https://via.placeholder.com/600x300?text=Audio+and+Subtitles+Switching" alt="Audio and Subtitles Switching GIF">
+            <p class="business-case-desc">Picture watching *Money Heist* in Spanish but switching to Hindi audio mid-scene, or adding Tamil subtitles to *Crash Landing on You* for clarity. Netflix’s Audio and Subtitles Switching feature lets you change languages or subtitle tracks on the fly, tailoring your experience to your preferences. It’s not just a menu—it’s a gateway to enjoying *Sacred Games* or *The Witcher* in your language of choice, making every moment accessible and immersive.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Why This Matters?</h3>
+            <p class="business-case-desc">This feature is Netflix’s bridge to a global audience. It ensures *Panchayat* feels at home in Hindi or *Vincenzo* resonates in Korean with English subtitles, catering to diverse linguistic needs. In India, where 22 official languages and 1,600 dialects thrive, 65% of viewers use alternate audio or subtitles. By enabling seamless switches, Netflix boosts accessibility, supports language learners, and enhances engagement, keeping users streaming longer and strengthening subscriber loyalty in a multilingual market.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Actors Behind the Scenes</h3>
+            <p class="business-case-desc">The feature relies on a HashMap, a data structure that maps content IDs to available audio and subtitle tracks. For *Delhi Crime*, the HashMap stores keys like “DC001” linked to values listing tracks like Hindi audio or Tamil subtitles. With O(1) access, the HashMap ensures instant retrieval of language options, allowing Netflix to update the player swiftly when you switch from English to Telugu during *Heeramandi*.</p>
+            <button class="watch-now-button" onclick="toggleCode('hashMapCode')">Watch now</button>
+            <div id="hashMapCode" class="hidden-code">
+class LanguageTrack:
+    def __init__(self, language, type, file_url):
+        self.language = language  # e.g., 'Hindi'
+        self.type = type  # 'audio' or 'subtitle'
+        self.file_url = file_url
+
+class LanguageManager:
+    def __init__(self):
+        self.hashmap = {}  # content_id -> list of LanguageTrack
+    
+    def add_track(self, content_id, language, type, file_url):
+        if content_id not in self.hashmap:
+            self.hashmap[content_id] = []
+        self.hashmap[content_id].append(LanguageTrack(language, type, file_url))
+    
+    def get_tracks(self, content_id):
+        return self.hashmap.get(content_id, [])
+    
+    def remove_track(self, content_id, language, type):
+        if content_id in self.hashmap:
+            self.hashmap[content_id] = [track for track in self.hashmap[content_id] 
+                                       if not (track.language == language and track.type == type)]
+            if not self.hashmap[content_id]:
+                del self.hashmap[content_id]
+
+# Example: Managing audio/subtitle tracks
+manager = LanguageManager()
+manager.add_track("DC001", "Hindi", "audio", "hindi_audio.mp3")
+manager.add_track("DC001", "Tamil", "subtitle", "tamil_sub.srt")
+tracks = manager.get_tracks("DC001")
+print("Available tracks:", [(t.language, t.type) for t in tracks])
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Visualization (Models and Figures)</h3>
+            <p class="business-case-desc">Think of the HashMap as a digital librarian for *Stranger Things*’ language tracks. Each book (content ID) has a card catalog entry listing audio and subtitle options, like English audio or Kannada subtitles. When you select a new language, Netflix queries the HashMap, grabs the track’s file URL, and updates the player instantly. Redis caches frequently accessed tracks for popular titles like *Mismatched*, serving them via an API to ensure zero lag during switches.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Efficiency Analysis</h3>
+            <p class="business-case-desc">The HashMap is a speed champion for this feature. Inserting or retrieving tracks takes O(1) average time, perfect for instant language switches. Deleting tracks is also O(1), ensuring efficient updates. Space complexity is O(n), where n is the number of content IDs, which scales well for Netflix’s catalog. Caching track metadata in Redis further reduces query time to O(1), critical for India’s mobile users who expect fluid controls. The trade-off is handling hash collisions, but a well-designed hash function keeps performance tight, even at scale.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Alternative Data Structures to HashMap</h3>
+            <p class="business-case-desc">HashMaps are ideal for audio and subtitle switching, but what if they weren’t an option? Let’s explore four alternatives—Array, Binary Search Tree, Trie, and Linked List—and why HashMaps remain the best choice.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">1) Array</h3>
+            <p class="business-case-desc">Description: Stores content IDs and tracks in a flat array, searched linearly. <br> Complexity: Insert: O(1); Search: O(n); Space: O(n). <br> Drawback: Linear search time is too slow for Netflix’s large catalog, causing delays in track retrieval. <br>
+            <button class="watch-now-button" onclick="toggleCode('arrayCode')">Watch now</button>
+            <div id="arrayCode" class="hidden-code">
+class ArrayManager:
+    def __init__(self):
+        self.array = []
+    
+    def add_track(self, content_id, language, type, file_url):
+        self.array.append((content_id, LanguageTrack(language, type, file_url)))
+    
+    def get_tracks(self, content_id):
+        return [track for cid, track in self.array if cid == content_id]
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">2) Binary Search Tree</h3>
+            <p class="business-case-desc">Description: Stores content IDs in a BST, with tracks as node values. <br> Complexity: Insert/Search: O(log n) average, O(n) worst; Space: O(n). <br> Drawback: Slower than HashMaps and risks imbalance, adding overhead for frequent track lookups. <br>
+            <button class="watch-now-button" onclick="toggleCode('bstCode')">Watch now</button>
+            <div id="bstCode" class="hidden-code">
+class BSTNode:
+    def __init__(self, content_id):
+        self.content_id = content_id
+        self.tracks = []
+        self.left = None
+        self.right = None
+
+class BSTManager:
+    def __init__(self):
+        self.root = None
+    
+    def add_track(self, content_id, language, type, file_url):
+        # Insert logic
+        pass
+    
+    def get_tracks(self, content_id):
+        # Search logic
+        pass
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">3) Trie</h3>
+            <p class="business-case-desc">Description: Stores content IDs as paths in a prefix tree, with tracks at leaf nodes. <br> Complexity: Insert/Search: O(m), where m is ID length; Space: O(n * m). <br> Drawback: Overkill for fixed-length content IDs, with higher space usage than HashMaps for Netflix’s needs. <br>
+            <button class="watch-now-button" onclick="toggleCode('trieCode')">Watch now</button>
+            <div id="trieCode" class="hidden-code">
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.tracks = []
+
+class TrieManager:
+    def __init__(self):
+        self.root = TrieNode()
+    
+    def add_track(self, content_id, language, type, file_url):
+        node = self.root
+        for char in content_id:
+            if char not in node.children:
+                node.children[char] = TrieNode()
+            node = node.children[char]
+        node.tracks.append(LanguageTrack(language, type, file_url))
+    
+    def get_tracks(self, content_id):
+        node = self.root
+        for char in content_id:
+            if char not in node.children:
+                return []
+            node = node.children[char]
+        return node.tracks
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">4) Linked List</h3>
+            <p class="business-case-desc">Description: Stores content IDs and tracks in a linked list, searched sequentially. <br> Complexity: Insert: O(1); Search: O(n); Space: O(n). <br> Drawback: Linear search time is impractical for Netflix’s scale, causing delays in language switches. <br>
+            <button class="watch-now-button" onclick="toggleCode('linkedListCode')">Watch now</button>
+            <div id="linkedListCode" class="hidden-code">
+class ListNode:
+    def __init__(self, content_id, track):
+        self.content_id = content_id
+        self.track = track
+        self.next = None
+
+class LinkedListManager:
+    def __init__(self):
+        self.head = None
+    
+    def add_track(self, content_id, language, type, file_url):
+        node = ListNode(content_id, LanguageTrack(language, type, file_url))
+        node.next = self.head
+        self.head = node
+    
+    def get_tracks(self, content_id):
+        curr = self.head
+        tracks = []
+        while curr:
+            if curr.content_id == content_id:
+                tracks.append(curr.track)
+            curr = curr.next
+        return tracks
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Why HashMap is Better?</h3>
+            <p class="business-case-desc">Efficiency: HashMaps offer O(1) average insert/search, faster than Arrays/Linked Lists (O(n) search) or BSTs (O(log n)). Tries are slower for fixed-length IDs.<br>
+Simplicity: HashMaps are straightforward to implement and maintain compared to BSTs’ balancing or Tries’ complex structure.<br>
+Scalability: With Redis caching, HashMaps handle Netflix’s vast catalog, delivering instant track access to millions.<br>
+Flexibility: Easily supports adding/removing tracks, unlike Arrays or Linked Lists, which struggle with dynamic updates.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Learnings</h3>
+            <p class="business-case-desc">HashMaps’ fast access (O(1)) ensures instant language switches, enhancing immersion in *All of Us Are Dead* or *The Expanse*.<br>
+Supporting multilingual tracks taps into India’s 65% subtitle/audio switchers, boosting accessibility and retention.<br>
+Redis caching delivers seamless track changes, vital for India’s 80% mobile traffic, ensuring a fluid experience.<br>
+The HashMap scales with Netflix’s growing catalog, including originals like *Khakee: The Bihar Chapter*, keeping options robust.<br>
+Efficient track management adapts to user preferences, maintaining engagement across diverse linguistic audiences.</p>
+        </div>
+    </main>
+
+    <div class="nav-arrows">
+        <a href="business-case6.html" class="nav-arrow">← Previous</a>
+        <a href="index.html" class="nav-arrow">X Close Business Case </a>
+        <a href="business-case8.html" class="nav-arrow">Next →</a>
+    </div>
+
+    <script>
+        function toggleCode(id) {
+            var code = document.getElementById(id);
+            if (code.style.display === "block") {
+                code.style.display = "none";
+            } else {
+                code.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

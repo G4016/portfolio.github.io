@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Business Case 6 | GANESH NAIK </title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+            :root {
+                --color-bg: #141414;
+                --color-text: #ffffff;
+                --color-accent: #e50914;
+                --color-highlight: #b3b3b3;
+                --color-muted: #737373;
+                --color-shadow: rgba(0, 0, 0, 0.3);
+                --primary-shade: #b20710;
+                --border-radius: 4px;
+                --section-bg: #1f1f1f;
+                --project-bg: #252525;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                scroll-behavior: smooth;
+                font-family: 'Helvetica Neue', Arial, sans-serif;
+            }
+
+            body {
+                background: var(--color-bg);
+                color: var(--color-text);
+                line-height: 1.5;
+                padding-top: 70px;
+            }
+
+            .navbar {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                z-index: 1000;
+                height: 70px;
+                display: flex;
+                align-items: center;
+            }
+
+            .nav-container {
+                max-width: 1370px;
+                margin: 0 auto;
+                padding: 0 4%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+
+            .nav-logo {
+                font-weight: 700;
+                font-size: 1.5rem;
+                color: var(--color-accent);
+                text-transform: uppercase;
+            }
+
+            .section {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 3rem 4%;
+                max-width: 1370px;
+                margin: auto;
+                min-height: calc(100vh - 70px);
+                background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/originals/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg');
+                background-size: cover;
+                background-position: center;
+            }
+
+            h2 {
+                color: var(--color-text);
+                margin-bottom: 1.5rem;
+                font-size: 1.8rem;
+                font-weight: 500;
+                text-align: left;
+            }
+
+            .business-case-item {
+                background-color: var(--project-bg);
+                padding: 1.5rem;
+                border-radius: var(--border-radius);
+                border: 1px solid #333;
+                transition: transform 0.3s ease;
+            }
+
+            .business-case-item:hover {
+                transform: scale(1.02);
+            }
+
+            .business-case-title {
+                color: var(--color-accent);
+                font-size: 1.5rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .business-case-desc {
+                color: var(--color-highlight);
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 1rem;
+            }
+
+            .business-case-item img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin-bottom: 1rem;
+                border-radius: var(--border-radius);
+            }
+
+            .business-case-desc pre {
+                background-color: #1a1a1a;
+                padding: 1rem;
+                border-radius: var(--border-radius);
+                overflow-x: auto;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 0.9rem;
+                color: #ffffff;
+                white-space: pre-wrap;
+            }
+
+            .business-case-desc code {
+                font-family: 'Courier New', Courier, monospace;
+            }
+
+            .nav-arrows {
+                display: flex;
+                justify-content: space-between;
+                padding: 1rem 4%;
+                max-width: 1370px;
+                margin: 2rem auto;
+                background: var(--color-bg);
+            }
+
+            .nav-arrow {
+                background-color: var(--color-accent);
+                color: var(--color-text);
+                padding: 0.5rem 1rem;
+                border-radius: var(--border-radius);
+                text-decoration: none;
+                font-size: 0.9rem;
+                transition: background-color 0.3s ease;
+            }
+
+            .nav-arrow:hover {
+                background-color: var(--primary-shade);
+            }
+
+            /* Added styles for the Watch Now button */
+            .watch-now-button {
+                background-color: var(--color-accent);
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: var(--border-radius);
+                cursor: pointer;
+                font-size: 16px;
+                margin: 10px 0;
+                transition: background-color 0.3s ease;
+            }
+            
+            .watch-now-button:hover {
+                background-color: var(--primary-shade);
+            }
+            
+            .hidden-code {
+                display: none;
+                background-color: #1a1a1a;
+                border: 1px solid #333;
+                padding: 15px;
+                border-radius: var(--border-radius);
+                overflow-x: auto;
+                font-family: 'Courier New', Courier, monospace;
+                white-space: pre;
+            }
+
+            @media (max-width: 767px) {
+                .section {
+                    padding: 2rem 1rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo"> GANESH NAIK </div>
+            </div>
+        </nav>
+
+        <main class="section">
+            <h2>Playback Speed Adjustment</h2>
+            <div class="business-case-item">
+                <h3 class="business-case-title">What is the Feature About?</h3>
+                <img src="videos/speed.gif" alt="Playback Speed Adjustment GIF">
+                <p class="business-case-desc">Ever wanted to race through a Panchayat recap at 2x speed or savor a Vincenzo romance at 0.75x? Netflix’s Playback Speed Adjustment feature lets you tweak the viewing speed of any show or movie, from 0.5x to 2x, tailoring your experience to your mood or schedule. It’s not just a slider—it’s your control panel for customizing how you consume Sacred Games or Stranger Things, making every second count.</p>
+            </div>
+            <div class="business-case-item">
+                <h3 class="business-case-title">Why This Matters?</h3>
+                <p class="business-case-desc">This feature is Netflix’s nod to user freedom. Whether you’re cramming Money Heist before a finale or lingering on Crash Landing on You’s emotional beats, speed adjustment empowers you to watch your way. It boosts accessibility for language learners or hearing-impaired users and caters to India’s fast-paced viewers, where 50% use speed controls for series. By enhancing flexibility, it increases watch time, reduces churn, and keeps Netflix competitive in a crowded streaming market.</p>
+            </div>
+            <div class="business-case-item">
+                <h3 class="business-case-title">Actors Behind the Scenes</h3>
+                <p class="business-case-desc">The feature is powered by a Priority Queue, a data structure that prioritizes speed change requests based on timestamp and user session urgency. Each request, like switching Delhi Crime to 1.5x, is a task with a priority score, ensuring real-time processing. The Priority Queue uses a Min-Heap to keep the most urgent requests at the top, enabling Netflix to apply speed changes instantly, even during peak traffic.</p>
+                <button class="watch-now-button" onclick="toggleCode('priorityQueueCode')">Watch now</button>
+                <div id="priorityQueueCode" class="hidden-code">
+import heapq
+import time
+
+class SpeedRequest:
+    def __init__(self, user_id, session_id, speed, timestamp):
+        self.user_id = user_id
+        self.session_id = session_id
+        self.speed = speed
+        self.timestamp = timestamp
+        self.priority = timestamp  # Lower timestamp = higher priority
+    
+    def __lt__(self, other):
+        return self.priority < other.priority
+
+class SpeedAdjuster:
+    def __init__(self):
+        self.heap = []
+        self.request_map = {}  # Track active requests by session_id
+    
+    def add_request(self, user_id, session_id, speed):
+        timestamp = time.time()
+        request = SpeedRequest(user_id, session_id, speed, timestamp)
+        if session_id in self.request_map:
+            # Update existing request
+            self.request_map[session_id].speed = speed
+            self.request_map[session_id].timestamp = timestamp
+            heapq.heapify(self.heap)
+        else:
+            self.request_map[session_id] = request
+            heapq.heappush(self.heap, request)
+    
+    def process_next_request(self):
+        if self.heap:
+            request = heapq.heappop(self.heap)
+            del self.request_map[request.session_id]
+            return request.user_id, request.session_id, request.speed
+        return None
+    
+    def cancel_request(self, session_id):
+        if session_id in self.request_map:
+            request = self.request_map.pop(session_id)
+            self.heap.remove(request)
+            heapq.heapify(self.heap)
+
+# Example: Managing speed requests
+adjuster = SpeedAdjuster()
+adjuster.add_request("user123", "session001", 1.5)
+adjuster.add_request("user456", "session002", 2.0)
+result = adjuster.process_next_request()
+print("Processed request:", result)
+                </div>
+            </div>
+            <div class="business-case-item">
+                <h3 class="business-case-title">Visualization (Models and Figures)</h3>
+                <p class="business-case-desc">Imagine the Priority Queue as a fast-track line at an airport. Each speed change request for *Heeramandi* or *The Witcher* is a passenger, with earlier timestamps getting VIP status at the top of the Min-Heap. When a user switches to 1.25x, the queue pops the request, processes it, and updates the player instantly. Redis caches recent speed settings per session, ensuring repeat adjustments are served in a flash via an API, keeping your viewing flow uninterrupted.</p>
+            </div>
+            <div class="business-case-item">
+                <h3 class="business-case-title">Efficiency Analysis</h3>
+                <p class="business-case-desc">The Priority Queue is a speed demon for this task. Inserting a request takes O(log n) time, where n is the number of pending requests, thanks to the Min-Heap. Processing the highest-priority request is O(log n) due to heap extraction. Space complexity is O(n) to store the heap and session map, which scales for Netflix’s millions of concurrent users. Caching speed settings in Redis drops query time to O(1), vital for India’s mobile-first audience expecting seamless controls. The trade-off is frequent heap updates during peak usage, but hourly batch processing keeps the system responsive.</p>
+            </div>
+            <div class="business-case-item">
+                <h3 class="business-case-title">Alternative Data Structures to Priority Queue</h3>
+                <p class="business-case-desc">Priority Queues are perfect for managing speed requests, but what if they weren’t an option? Let’s explore four alternatives: FIFO Queue, Sorted List, Binary Search Tree, and Deque, and why Priority Queues stay ahead.</p>
+            </div>
+            <div class="business-case-item">
+                <h3 class="business-case-title">1) FIFO Queue</h3>
+                <p class="business-case-desc">Description: Processes requests in first-in, first-out order, like a regular queue. <br> Complexity: Insert: O(1); Process: O(1); Space: O(n). <br> Drawback: Ignores priority, delaying urgent requests during high traffic, unsuitable for real-time speed changes. <br>
+                <button class="watch-now-button" onclick="toggleCode('fifoQueueCode')">Watch now</button>
+                <div id="fifoQueueCode" class="hidden-code">
+from collections import deque
+
+class FIFOQueue:
+    def __init__(self):
+        self.queue = deque()
+    
+    def add_request(self, user_id, session_id, speed):
+        self.queue.append((user_id, session_id, speed))
+    
+    def process_next_request(self):
+        return self.queue.popleft() if self.queue else None
+                </div>
+            </div>
+            <div class="business-case-item">
+                <h3 class="business-case-title">2) Sorted List</h3>
+                <p class="business-case-desc">Description: Maintains requests sorted by timestamp in a list. <br> Complexity: Insert: O(n); Process: O(1); Space: O(n). <br> Drawback: Linear insertion time is too slow for Netflix’s high-frequency requests during peak hours. <br>
+                <button class="watch-now-button" onclick="toggleCode('sortedListCode')">Watch now</button>
+                <div id="sortedListCode" class="hidden-code">
+class SortedList:
+    def __init__(self):
+        self.list = []
+    
+    def add_request(self, user_id, session_id, speed):
+        timestamp = time.time()
+        self.list.append((timestamp, user_id, session_id, speed))
+        self.list.sort()
+    
+    def process_next_request(self):
+        return self.list.pop(0) if self.list else None
+                </div>
+            </div>
+            <div class="business-case-item">
+                <h3 class="business-case-title">3) Binary Search Tree</h3>
+                <p class="business-case-desc">Description: Stores requests in a BST, ordered by timestamp for priority. <br> Complexity: Insert/Process: O(log n) average, O(n) worst; Space: O(n). <br> Drawback: Risk of imbalance degrades performance, and it’s less optimized than heaps for frequent extractions. <br>
+                <button class="watch-now-button" onclick="toggleCode('bstCode')">Watch now</button>
+                <div id="bstCode" class="hidden-code">
+class BSTNode:
+    def __init__(self, timestamp, user_id, session_id, speed):
+        self.timestamp = timestamp
+        self.user_id = user_id
+        self.session_id = session_id
+        self.speed = speed
+        self.left = None
+        self.right = None
+
+class BSTQueue:
+    def __init__(self):
+        self.root = None
+    
+    def insert(self, user_id, session_id, speed):
+        # Insert logic
+        pass
+    
+    def process_next_request(self):
+        # Extract min logic
+        pass
+                </div>
+            </div>
+            <div class="business-case-item">
+                <h3 class="business-case-title">4) Deque</h3>
+                <p class="business-case-desc">Description: A double-ended queue allowing insertions at both ends. <br> Complexity: Insert: O(1); Process: O(n) for priority; Space: O(n). <br> Drawback: Lacks inherent priority ordering, requiring manual sorting for urgent requests, which is inefficient. <br>
+                <button class="watch-now-button" onclick="toggleCode('dequeCode')">Watch now</button>
+                <div id="dequeCode" class="hidden-code">
+from collections import deque
+
+class DequeQueue:
+    def __init__(self):
+        self.deque = deque()
+    
+    def add_request(self, user_id, session_id, speed):
+        self.deque.append((time.time(), user_id, session_id, speed))
+    
+    def process_next_request(self):
+        if self.deque:
+            min_idx = min(range(len(self.deque)), key=lambda i: self.deque[i][0])
+            return self.deque.pop(min_idx)[1:]
+        return None
+                </div>
+            </div>
+            <div class="business-case-item">
+                <h3 class="business-case-title">Why Priority Queue is Better?</h3>
+                <p class="business-case-desc"> -> Efficiency: Priority Queues offer O(log n) for insert/process, faster than Sorted Lists (O(n) insert) or Deques (O(n) process). BSTs match O(log n) but risk imbalance.<br>
+-> Prioritization: Ensures urgent requests are processed first, unlike FIFO Queues or Deques, which lack priority logic.<br>
+-> Simplicity: Min-Heap is straightforward to maintain compared to BST’s balancing or Sorted List’s linear updates.<br>
+-> Scalability: With Redis caching, Priority Queues handle Netflix’s real-time speed adjustments for millions, delivering seamless control.</p>
+            </div>
+            <div class="business-case-item">
+                <h3 class="business-case-title">Learnings</h3>
+                <p class="business-case-desc">Priority Queues’ fast processing (O(log n)) ensures instant speed changes, enhancing user control over Mismatched or The Expanse.<br>
+Supporting speed adjustments taps into India’s 50% speed control users, boosting engagement and accessibility.<br>
+Redis caching delivers seamless speed transitions, vital for India’s 80% mobile traffic, ensuring a smooth experience.<br>
+The queue scales with Netflix’s growing user base, handling peak loads for originals like All of Us Are Dead.<br>
+Dynamic request prioritization adapts to traffic spikes, maintaining responsiveness during binge-watching surges.</p>
+            </div>
+        </main>
+
+        <div class="nav-arrows">
+            <a href="business-case5.html" class="nav-arrow">← Previous</a>
+            <a href="index.html" class="nav-arrow">X Close Business Case </a>
+            <a href="business-case7.html" class="nav-arrow">Next →</a>
+        </div>
+
+        <script>
+            function toggleCode(id) {
+                var code = document.getElementById(id);
+                if (code.style.display === "block") {
+                    code.style.display = "none";
+                } else {
+                    code.style.display = "block";
+                }
+            }
+        </script>
+    </body>
+</html>

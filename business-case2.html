@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Case 2 | Ganesh Naik </title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #141414;
+            --color-text: #ffffff;
+            --color-accent: #e50914;
+            --color-highlight: #b3b3b3;
+            --color-muted: #737373;
+            --color-shadow: rgba(0, 0, 0, 0.3);
+            --primary-shade: #b20710;
+            --border-radius: 4px;
+            --section-bg: #1f1f1f;
+            --project-bg: #252525;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.5;
+            padding-top: 70px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: 1370px;
+            margin: 0 auto;
+            padding: 0 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 3rem 4%;
+            max-width: 1370px;
+            margin: auto;
+            min-height: calc(100vh - 70px);
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/originals/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h2 {
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .business-case-item {
+            background-color: var(--project-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+
+        .business-case-item:hover {
+            transform: scale(1.02);
+        }
+
+        .business-case-title {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .business-case-desc {
+            color: var(--color-highlight);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .business-case-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+        }
+
+        .business-case-desc pre {
+            background-color: #1a1a1a;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #ffffff;
+            white-space: pre-wrap;
+        }
+
+        .business-case-desc code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 4%;
+            max-width: 1370px;
+            margin: 2rem auto;
+            background: var(--color-bg);
+        }
+
+        .nav-arrow {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            background-color: var(--primary-shade);
+        }
+
+        /* Added styles for the Watch Now button */
+        .watch-now-button {
+            background-color: var(--color-accent);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .watch-now-button:hover {
+            background-color: var(--primary-shade);
+        }
+        
+        .hidden-code {
+            display: none;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre;
+        }
+
+        @media (max-width: 767px) {
+            .section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"> GANESH NAIK</div>
+        </div>
+    </nav>
+
+    <main class="section">
+        <h2>Recommended TV Shows and Movies</h2>
+        <div class="business-case-item">
+            <h3 class="business-case-title">What is the feature about?</h3>
+            <img src="videos/bc2.gif" alt="Recommended Shows and Movies GIF">
+            <p class="business-case-desc">Imagine you have a friend who handpick's the best series and movies obviously of your interests. Netflix’s recommendation system does exactly that, suggesting gems like “Sacred Games” or “Squid Games” based on your viewing habits. It’s not just a list, it’s a personalized gateway to keep you glued to the platform, cutting through the noise of endless scrolling.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Why this matters?</h3>
+            <p class="business-case-desc">This feature is Netflix’s prominent weapon for keeping users hooked. It’s like a friend who knows your taste better than you do, nudging you toward “Squid Games” after you binged “Money Heist” By analyzing your watch history, ratings, and even what you pause or skip, it tailors suggestions to your unique preferences. This keeps you streaming longer, reduces churn, and showcases both blockbuster hits and hidden treasures, ensuring Netflix’s vast library is fully explored. In India, where diverse tastes span Bollywood to K-dramas, personalized recommendations are key to capturing hearts and subscriptions.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Actors behind the scenes</h3>
+            <p class="business-case-desc">The magic of Netflix’s recommendations is powered by a K-D Tree, a data structure that organizes titles in a multidimensional space based on features like genre, runtime, and user engagement metrics. Imagine “Money Heist” as a point in this space, close to “Narcos” because of their shared action-thriller vibes. When you watch one, the K-D Tree finds the nearest neighbors titles with similar traits and serves them up as recommendations. It’s lightning-fast, ensuring your next binge is just a click away.</p>
+            <button class="watch-now-button" onclick="toggleCode('kdTreeCode')">Watch now</button>
+            <div id="kdTreeCode" class="hidden-code">
+// C++ Program to Implement KD Tree
+#include <iostream>
+#include <array>
+#include <cmath>
+using namespace std;
+
+// Template class for KDTree with K dimensions
+template <size_t K>
+class KDTree {
+private:
+    // Node structure representing each point in the KDTree
+    struct Node {
+        // Point in K dimensions
+        array<double, K> point; 
+        // Pointer to left child
+        Node* left;          
+        // Pointer to right child
+        Node* right;            
+
+        // Constructor to initialize a Node
+        Node(const array<double, K>& pt) : point(pt), left(nullptr), right(nullptr) {}
+    };
+
+    Node* root; // Root of the KDTree
+
+    // Recursive function to insert a point into the KDTree
+    Node* insertRecursive(Node* node, const array<double, K>& point, int depth) {
+        // Base case: If node is null, create a new node
+        if (node == nullptr) return new Node(point);
+
+        // Calculate current dimension (cd)
+        int cd = depth % K;
+
+        // Compare point with current node and decide to go left or right
+        if (point[cd] < node->point[cd])
+            node->left = insertRecursive(node->left, point, depth + 1);
+        else
+            node->right = insertRecursive(node->right, point, depth + 1);
+
+        return node;
+    }
+
+    // Recursive function to search for a point in the KDTree
+    bool searchRecursive(Node* node, const array<double, K>& point, int depth) const {
+        // Base case: If node is null, the point is not found
+        if (node == nullptr) return false;
+
+        // If the current node matches the point, return true
+        if (node->point == point) return true;
+
+        // Calculate current dimension (cd)
+        int cd = depth % K;
+
+        // Compare point with current node and decide to go left or right
+        if (point[cd] < node->point[cd])
+            return searchRecursive(node->left, point, depth + 1);
+        else
+            return searchRecursive(node->right, point, depth + 1);
+    }
+
+    // Recursive function to print the KDTree
+    void printRecursive(Node* node, int depth) const {
+        // Base case: If node is null, return
+        if (node == nullptr) return;
+
+        // Print current node with indentation based on depth
+        for (int i = 0; i < depth; i++) cout << "  ";
+        cout << "(";
+        for (size_t i = 0; i < K; i++) {
+            cout << node->point[i];
+            if (i < K - 1) cout << ", ";
+        }
+        cout << ")" << endl;
+
+        // Recursively print left and right children
+        printRecursive(node->left, depth + 1);
+        printRecursive(node->right, depth + 1);
+    }
+
+public:
+    // Constructor to initialize the KDTree with a null root
+    KDTree() : root(nullptr) {}
+
+    // Public function to insert a point into the KDTree
+    void insert(const array<double, K>& point) {
+        root = insertRecursive(root, point, 0);
+    }
+
+    // Public function to search for a point in the KDTree
+    bool search(const array<double, K>& point) const {
+        return searchRecursive(root, point, 0);
+    }
+
+    // Public function to print the KDTree
+    void print() const {
+        printRecursive(root, 0);
+    }
+};
+
+int main() {
+    // Create a KDTree with 2 dimensions
+    KDTree<2> tree;
+
+    // Insert points into the KDTree
+    tree.insert({3, 6});
+    tree.insert({2, 2});
+    tree.insert({4, 7});
+    tree.insert({1, 3});
+    tree.insert({2, 4});
+    tree.insert({5, 4});
+    tree.insert({7, 2});
+
+    // Print the KDTree structure
+    cout << "KD Tree structure:" << endl;
+    tree.print();
+
+    // Search for specific points in the KDTree
+    array<double, 2> searchPoint = {2, 4};
+    cout << "\nSearching for point (2, 4): " 
+         << (tree.search(searchPoint) ? "Found" : "Not found") << endl;
+
+    searchPoint = {6, 3};
+    cout << "Searching for point (6, 3): " 
+         << (tree.search(searchPoint) ? "Found" : "Not found") << endl;
+
+    return 0;
+}
+            </div>
+            <p class="business-case-desc"><a href="reference.html" class="nav-arrow">[3]</a></p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Visualization (Models and Figures)</h3>
+            <p class="business-case-desc">Think of the K-D Tree as a map where each show is a pin dropped in a multidimensional city. “Sacred Games” sits near “Mirzapur” because they share gritty crime drama vibes, while “Kota Factory” is farther away in the quiet suburb of educational shows. The tree splits this space along axes like genre or runtime, making it easy to find the closest pins to your taste. User data watch history, ratings gets mapped to a point, and the K-D Tree quickly pulls the nearest titles. Redis caches these results, serving them instantly to your homepage via an API.</p>
+            <img src="images/kd_tree_design.png" alt="Business Case 1 GIF">
+            <a href="reference.html" class="nav-arrow">[4]</a>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Efficiency Analysis</h3>
+            <p class="business-case-desc">The K-D Tree is a speed champion for recommendations. Building the tree for 10,000 titles takes O(n log n) time, where n is the number of titles. Finding k nearest neighbors? That’s O(log n) on average, perfect for quick suggestions. Space complexity is O(n) to store the tree, which scales well for Netflix’s catalog. Caching recommendations in Redis slashes query time to O(1), ensuring instant results for India’s mobile-first users, who expect seamless experiences. The trade-off is periodic tree rebuilding to reflect new titles or user data, but daily updates keep things fresh without bogging down the system.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Alternative Data Structures to K-D Tree</h3>
+            <p class="business-case-desc">K-D Trees are Netflix’s go to for recommendations, but what if we couldn’t use them? Let’s dive into four alternative data structures: Ball Tree, R-Tree, Locality-Sensitive Hashing (LSH), and Brute-Force Search, and see why K-D Trees still steal the show.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">1) Ball Tree</h3>
+            <p class="business-case-desc">Description: Organizes titles in a tree where each node is a hypersphere containing points (titles). Finds nearest neighbors by checking overlapping spheres. <br> Complexity: Construction: O(n log n); Nearest Neighbor Search: O(log n) average; Space: O(n). <br> Drawback: More complex construction than K-D Trees, and performance degrades in high-dimensional spaces common in Netflix’s feature sets. <br>
+            <button class="watch-now-button" onclick="toggleCode('ballTreeCode')">Watch now</button>
+            <div id="ballTreeCode" class="hidden-code">
+class BallTreeNode:
+    def __init__(self, center, radius, points, left=None, right=None):
+        self.center = center
+        self.radius = radius
+        self.points = points
+        self.left = left
+        self.right = right
+
+class BallTreeRecommender:
+    def __init__(self):
+        self.root = None
+    def insert(self, points):
+        self.root = self._build_tree(points)
+    def _build_tree(self, points):
+        if len(points) <= 10:
+            return BallTreeNode(np.mean(points, axis=0), max(np.linalg.norm(p - np.mean(points, axis=0)) for p in points), points)
+        # Split points into two clusters
+        pass
+            </div>
+            </p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">2) R-Tree</h3>
+            <p class="business-case-desc">Description: A spatial index that groups titles into bounding rectangles, ideal for multidimensional data. <br> Complexity: Construction: O(n log n); Nearest Neighbor Search: O(log n) average, O(n) worst; Space: O(n). <br> Drawback: Optimized for spatial queries (e.g., geographic data), not ideal for Netflix’s high-dimensional, non-spatial feature vectors. <br>
+            <button class="watch-now-button" onclick="toggleCode('rTreeCode')">Watch now</button>
+            <div id="rTreeCode" class="hidden-code">
+class RTreeNode:
+    def __init__(self, bounds, children=None, points=None):
+        self.bounds = bounds  # Min/max coordinates
+        self.children = children if children else []
+        self.points = points if points else []
+
+class RTreeRecommender:
+    def __init__(self):
+        self.root = RTreeNode(bounds=[(0, 0), (1, 1)])
+    def insert(self, point, title_id):
+        self._insert_rec(self.root, point, title_id)
+    def _insert_rec(self, node, point, title_id):
+        if node.children:
+            # Choose child with least overlap
+            pass
+        else:
+            node.points.append((point, title_id))
+            </div>
+            </p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">3) Locality-Sensitive Hashing (LSH)</h3>
+            <p class="business-case-desc">Description: Hashes similar titles into the same buckets, approximating nearest neighbors. <br> Complexity: Construction: O(n); Nearest Neighbor Search: O(1) average with preprocessing; Space: O(n). <br> Drawback: Approximate results can miss precise matches, and tuning hash functions is complex for Netflix’s diverse data. <br>
+            <button class="watch-now-button" onclick="toggleCode('lshCode')">Watch now</button>
+            <div id="lshCode" class="hidden-code">
+class LSHRecommender:
+    def __init__(self, num_tables, hash_size):
+        self.tables = [{} for _ in range(num_tables)]
+        self.hash_funcs = [self._random_hash for _ in range(num_tables)]
+    def _random_hash(self, point):
+        return hash(tuple(point)) % 1000
+    def insert(self, point, title_id):
+        for table, func in zip(self.tables, self.hash_funcs):
+            key = func(point)
+            if key not in table:
+                table[key] = []
+            table[key].append((point, title_id))
+    def query(self, point):
+        candidates = set()
+        for table, func in zip(self.tables, self.hash_funcs):
+            key = func(point)
+            if key in table:
+                candidates.update(table[key])
+        return candidates
+            </div>
+            </p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">4) Brute-Force Search</h3>
+            <p class="business-case-desc">Description: Compares the user’s preferences to every title, calculating distances directly. <br> Complexity: Search: O(n); Space: O(n). <br> Drawback: Linear time makes it impractical for Netflix’s massive catalog, especially for real-time recommendations. <br>
+            <button class="watch-now-button" onclick="toggleCode('bruteForceCode')">Watch now</button>
+            <div id="bruteForceCode" class="hidden-code">
+class BruteForceRecommender:
+    def __init__(self):
+        self.titles = []
+    def insert(self, point, title_id):
+        self.titles.append((point, title_id))
+    def nearest_neighbors(self, target, k=10):
+        distances = [(np.linalg.norm(np.array(target) - np.array(p)), t) for p, t in self.titles]
+        distances.sort()
+        return [t for _, t in distances[:k]]
+            </div>
+            </p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Why K-D Tree is better?</h3>
+            <p class="business-case-desc"> -> Efficiency: K-D Trees offer O(log n) for nearest neighbor searches, faster than Brute-Force (O(n)) and comparable to Ball/R-Trees but simpler to implement. LSH is faster but sacrifices accuracy.<br>
+-> Precision: K-D Trees provide exact nearest neighbors, unlike LSH’s approximations, ensuring high-quality recommendations.<br>
+-> Simplicity: Easier to maintain than Ball Trees (complex hyperspheres) or R-Trees (spatial focus), and more scalable than Brute-Force for Netflix’s catalog.<br>
+-> Scalability: Paired with Redis caching, K-D Trees handle Netflix’s real-time needs, delivering personalized suggestions to millions instantly.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Learnings</h3>
+            <p class="business-case-desc">K-D Trees’ fast searches (O(log n)) ensure precise recommendations, building trust in Netflix’s suggestions, like pushing “Panchayat” to rural drama fans.<br>
+Tailoring to local tastes (e.g., Bollywood, K-dramas) taps into India’s 600 million OTT viewers, driving subscriptions.<br>
+Redis caching delivers instant suggestions, vital for India’s 80% mobile traffic, ensuring a smooth experience.<br>
+The tree scales with Netflix’s growing catalog, including originals like “Heeramandi,” keeping recommendations fresh.<br>
+Dynamic updates to the tree adapt to trends (e.g., K-drama surges), maintaining engagement during peak viewing hours.</p>
+        </div>
+    </main>
+
+    <div class="nav-arrows">
+        <a href="business-case1.html" class="nav-arrow">← Previous</a>
+        <a href="index.html" class="nav-arrow">X Close Business Case </a>
+        <a href="business-case3.html" class="nav-arrow">Next →</a>
+    </div>
+
+    <script>
+        function toggleCode(id) {
+            var code = document.getElementById(id);
+            if (code.style.display === "block") {
+                code.style.display = "none";
+            } else {
+                code.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Case 3 | Ganesh Naik </title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #141414;
+            --color-text: #ffffff;
+            --color-accent: #e50914;
+            --color-highlight: #b3b3b3;
+            --color-muted: #737373;
+            --color-shadow: rgba(0, 0, 0, 0.3);
+            --primary-shade: #b20710;
+            --border-radius: 4px;
+            --section-bg: #1f1f1f;
+            --project-bg: #252525;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.5;
+            padding-top: 70px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: 1370px;
+            margin: 0 auto;
+            padding: 0 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 3rem 4%;
+            max-width: 1370px;
+            margin: auto;
+            min-height: calc(100vh - 70px);
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/originals/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h2 {
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .business-case-item {
+            background-color: var(--project-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+
+        .business-case-item:hover {
+            transform: scale(1.02);
+        }
+
+        .business-case-title {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .business-case-desc {
+            color: var(--color-highlight);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .business-case-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+        }
+
+        .business-case-desc pre {
+            background-color: #1a1a1a;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #ffffff;
+            white-space: pre-wrap;
+        }
+
+        .business-case-desc code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 4%;
+            max-width: 1370px;
+            margin: 2rem auto;
+            background: var(--color-bg);
+        }
+
+        .nav-arrow {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            background-color: var(--primary-shade);
+        }
+
+        /* Added styles for the Watch Now button */
+        .watch-now-button {
+            background-color: var(--color-accent);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .watch-now-button:hover {
+            background-color: var(--primary-shade);
+        }
+        
+        .hidden-code {
+            display: none;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre;
+        }
+
+        @media (max-width: 767px) {
+            .section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">GANESH NAIK</div>
+        </div>
+    </nav>
+
+    <main class="section">
+        <h2>Anime, Romantic, Kdrama, TV Sci-Fi Content Categorization</h2>
+        <div class="business-case-item">
+            <h3 class="business-case-title">What is the feature about?</h3>
+            <img src="videos/bc3.gif" alt="Content Categorization GIF">
+            <p class="business-case-desc">Ever wondered how Netflix knows to slot “Naruto” into Anime or “When Life gives you Tangerines” into Kdrama? The content categorization feature is the brain behind organizing Netflix’s vast library into genres like Anime, Romantic, Kdrama, and Sci-Fi TV. It’s not just about labels, it’s a roadmap that guides users straight to their favorite niches, making the platform feel like a tailored treasure hunt.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Why this matters?</h3>
+            <p class="business-case-desc">This feature is Netflix’s way of saying, “We’ve got something for everyone!” By tagging titles with precise genres, it makes navigation a breeze, whether you’re craving the emotional rollercoaster of a Kdrama like “Vincenzo” or the futuristic thrills of “Stranger Things.” Accurate categorization boosts discoverability, keeps users engaged, and highlights niche content, which is crucial in India where diverse tastes range from Anime to Bollywood romances. It’s a key driver for retaining subscribers by ensuring every viewer finds their perfect match.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Actors behind the scenes</h3>
+            <p class="business-case-desc">The backbone of this feature is a Decision Tree, a data structure that classifies titles based on metadata like themes, cast, and language. For example, a show with a Korean cast and romantic themes gets tagged as Kdrama, while one with futuristic settings lands in TV Sci-Fi. The tree asks a series of yes-or-no questions, Is the language Japanese? Does it have animated visuals? to funnel each title into the right genre bucket. It’s fast, accurate, and scales with Netflix’s ever growing catalog.</p>
+            <button class="watch-now-button" onclick="toggleCode('decisionTreeCode')">Watch now</button>
+            <div id="decisionTreeCode" class="hidden-code">
+from collections import Counter
+
+class DecisionTreeNode:
+    def __init__(self, feature=None, threshold=None, left=None, right=None, value=None):
+        self.feature = feature  # e.g., 'language', 'theme'
+        self.threshold = threshold  # e.g., 'Korean', 'animated'
+        self.left = left
+        self.right = right
+        self.value = value  # Genre label, e.g., 'Kdrama'
+
+class DecisionTreeClassifier:
+    def __init__(self, max_depth=10):
+        self.root = None
+        self.max_depth = max_depth
+    
+    def fit(self, X, y):
+        self.root = self._build_tree(X, y, depth=0)
+    
+    def _build_tree(self, X, y, depth):
+        if depth >= self.max_depth or len(set(y)) == 1:
+            return DecisionTreeNode(value=Counter(y).most_common(1)[0][0])
+        feature, threshold = self._best_split(X, y)
+        if feature is None:
+            return DecisionTreeNode(value=Counter(y).most_common(1)[0][0])
+        left_idx = [i for i, x in enumerate(X) if x[feature] <= threshold]
+        right_idx = [i for i, x in enumerate(X) if x[feature] > threshold]
+        if not left_idx or not right_idx:
+            return DecisionTreeNode(value=Counter(y).most_common(1)[0][0])
+        left = self._build_tree([X[i] for i in left_idx], [y[i] for i in left_idx], depth + 1)
+        right = self._build_tree([X[i] for i in right_idx], [y[i] for i in right_idx], depth + 1)
+        return DecisionTreeNode(feature, threshold, left, right)
+    
+    def _best_split(self, X, y):
+        best_gain = -1
+        best_feature = None
+        best_threshold = None
+        for feature in range(len(X[0])):
+            thresholds = sorted(set(x[feature] for x in X))
+            for threshold in thresholds:
+                left_y = [y[i] for i in range(len(X)) if X[i][feature] <= threshold]
+                right_y = [y[i] for i in range(len(X)) if X[i][feature] > threshold]
+                if left_y and right_y:
+                    gain = self._information_gain(y, left_y, right_y)
+                    if gain > best_gain:
+                        best_gain = gain
+                        best_feature = feature
+                        best_threshold = threshold
+        return best_feature, best_threshold
+    
+    def _information_gain(self, parent, left, right):
+        # Simplified entropy-based gain
+        return 0  # Placeholder for actual implementation
+    
+    def predict(self, x):
+        return self._predict_rec(self.root, x)
+    
+    def _predict_rec(self, node, x):
+        if node.value is not None:
+            return node.value
+        if x[node.feature] <= node.threshold:
+            return self._predict_rec(node.left, x)
+        return self._predict_rec(node.right, x)
+
+# Example: Categorizing titles
+classifier = DecisionTreeClassifier(max_depth=5)
+X = [[1, 0, 0], [0, 1, 1], [1, 1, 0]]  # Features: [is_animated, is_korean, has_scifi]
+y = ['Anime', 'Kdrama', 'TV Sci-Fi']
+classifier.fit(X, y)
+print("Predicted genre for [1, 0, 0]:", classifier.predict([1, 0, 0]))
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Visualization (Models and Figures)</h3>
+            <p class="business-case-desc">Picture the Decision Tree as a flowchart guiding each title to its genre home. At the root, it might ask, “Is the show animated?” If yes, it branches toward Anime; if no, it checks, “Is the cast Korean?” leading to Kdrama or elsewhere. Each leaf node holds a genre label, like TV Sci-Fi for “The Expanse.” Metadata feeds into the tree, which classifies titles swiftly, and a database caches these tags for instant retrieval when users browse genres on Netflix’s homepage.</p>
+            <img src="images/Decision_tree.png" alt="Business Case 1 GIF">
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Efficiency Analysis</h3>
+            <p class="business-case-desc">Decision Trees are a powerhouse for categorization. Training the tree on 10,000 titles takes O(n * d * f) time, where n is titles, d is max depth, and f is features (e.g., language, theme). Classification is blazing fast at O(d), typically under 10 steps for a balanced tree. Space complexity is O(n) for storing the tree, which is manageable for Netflix’s catalog. Caching genre tags in a database like MongoDB drops query time to O(1), perfect for India’s mobile users who demand quick navigation. The trade-off is retraining the tree periodically to handle new titles, but weekly updates keep the system current without overload.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Alternative Data Structures to Decision Tree</h3>
+            <p class="business-case-desc">Decision Trees shine for genre categorization, but what if they weren’t an option? Let’s explore four alternatives: Random Forest, Naive Bayes, Rule-Based System, and Support Vector Machine (SVM) and why Decision Trees remain the star of the show.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">1) Random Forest</h3>
+            <p class="business-case-desc">Description: An ensemble of multiple Decision Trees, each trained on a subset of data, with majority voting for classification. <br> Complexity: Training: O(t * n * d * f), where t is number of trees; Classification: O(t * d); Space: O(t * n). <br> Drawback: Higher training time and space requirements make it overkill for Netflix’s need for fast, single-tree classification. <br>
+            <button class="watch-now-button" onclick="toggleCode('randomForestCode')">Watch now</button>
+            <div id="randomForestCode" class="hidden-code">
+class RandomForest:
+    def __init__(self, n_trees=10, max_depth=5):
+        self.trees = [DecisionTreeClassifier(max_depth) for _ in range(n_trees)]
+    
+    def fit(self, X, y):
+        for tree in self.trees:
+            # Sample data subset
+            idx = np.random.choice(len(X), len(X), replace=True)
+            tree.fit([X[i] for i in idx], [y[i] for i in idx])
+    
+    def predict(self, x):
+        votes = [tree.predict(x) for tree in self.trees]
+        return Counter(votes).most_common(1)[0][0]
+            </div>
+            </p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">2) Naive Bayes</h3>
+            <p class="business-case-desc">Description: A probabilistic classifier that assumes feature independence, using Bayes’ theorem to predict genres. <br> Complexity: Training: O(n * f); Classification: O(f); Space: O(f * c), where c is classes. <br> Drawback: Assumes independence of features (e.g., language and theme), which doesn’t hold for Netflix’s complex metadata, reducing accuracy. <br>
+            <button class="watch-now-button" onclick="toggleCode('naiveBayesCode')">Watch now</button>
+            <div id="naiveBayesCode" class="hidden-code">
+class NaiveBayes:
+    def __init__(self):
+        self.priors = {}
+        self.likelihoods = {}
+    
+    def fit(self, X, y):
+        counts = Counter(y)
+        total = len(y)
+        for label in counts:
+            self.priors[label] = counts[label] / total
+            self.likelihoods[label] = []
+            # Compute feature probabilities
+            pass
+    
+    def predict(self, x):
+        # Calculate posterior probabilities
+        pass
+            </div>
+            </p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">3) Rule-Based System</h3>
+            <p class="business-case-desc">Description: Uses manually crafted if-then rules to assign genres based on metadata. <br> Complexity: Classification: O(r), where r is rules; Space: O(r). <br> Drawback: Rules are hard to scale and maintain for Netflix’s diverse and growing catalog, requiring constant manual updates. <br>
+            <button class="watch-now-button" onclick="toggleCode('ruleBasedCode')">Watch now</button>
+            <div id="ruleBasedCode" class="hidden-code">
+class RuleBasedClassifier:
+    def __init__(self):
+        self.rules = []
+    
+    def add_rule(self, condition, genre):
+        self.rules.append((condition, genre))
+    
+    def predict(self, x):
+        for condition, genre in self.rules:
+            if condition(x):
+                return genre
+        return 'Unknown'
+    
+# Example
+classifier = RuleBasedClassifier()
+classifier.add_rule(lambda x: x[0] == 1, 'Anime')
+            </div>
+            </p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">4) Support Vector Machine (SVM)</h3>
+            <p class="business-case-desc">Description: Finds a hyperplane to separate genres in feature space, using a kernel for non-linear data. <br> Complexity: Training: O(n^2 * f); Classification: O(n * f); Space: O(n). <br> Drawback: Slow training and classification make it impractical for Netflix’s large-scale, real-time needs. <br>
+            <button class="watch-now-button" onclick="toggleCode('svmCode')">Watch now</button>
+            <div id="svmCode" class="hidden-code">
+class SVMClassifier:
+    def __init__(self):
+        self.support_vectors = []
+        self.weights = []
+    
+    def fit(self, X, y):
+        # Optimize hyperplane
+        pass
+    
+    def predict(self, x):
+        # Compute distance to hyperplane
+        pass
+            </div>
+            </p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Why Decision Tree is better?</h3>
+            <p class="business-case-desc"> -> Efficiency: Decision Trees offer O(d) classification, faster than SVM (O(n * f)) and comparable to Naive Bayes but more accurate. Random Forests are slower due to multiple trees.<br>
+-> Accuracy: Decision Trees handle complex metadata relationships better than Naive Bayes’ independence assumption or Rule-Based Systems’ rigidity.<br>
+-> Simplicity: Easier to maintain than Random Forests (single tree) or SVM (complex optimization), and more scalable than Rule-Based Systems for Netflix’s catalog.<br>
+-> Scalability: With database caching, Decision Trees support Netflix’s real-time genre tagging needs, delivering seamless browsing to millions.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Learnings</h3>
+            <p class="business-case-desc">Decision Trees’ fast classification (O(d)) ensures accurate genre tags, making browsing intuitive, like guiding Anime fans to “Demon Slayer.”<br>
+Supporting niche genres like Kdrama taps into India’s 600 million OTT viewers, boosting engagement and subscriptions.<br>
+Database caching delivers instant genre access, crucial for India’s 80% mobile traffic, ensuring a smooth experience.<br>
+The tree scales with Netflix’s growing catalog, including originals like “All of Us Are Dead,” keeping genres fresh.<br>
+Periodic retraining adapts to trends (e.g., Anime’s rising popularity), maintaining discoverability during peak viewing times.</p>
+        </div>
+    </main>
+
+    <div class="nav-arrows">
+        <a href="business-case2.html" class="nav-arrow">← Previous</a>
+        <a href="index.html" class="nav-arrow">X Close Business Case </a>
+        <a href="business-case4.html" class="nav-arrow">Next →</a>
+    </div>
+
+    <script>
+        function toggleCode(id) {
+            var code = document.getElementById(id);
+            if (code.style.display === "block") {
+                code.style.display = "none";
+            } else {
+                code.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

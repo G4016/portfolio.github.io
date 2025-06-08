@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Case 9 | GANESH NAIK </title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #141414;
+            --color-text: #ffffff;
+            --color-accent: #e50914;
+            --color-highlight: #b3b3b3;
+            --color-muted: #737373;
+            --color-shadow: rgba(0, 0, 0, 0.3);
+            --primary-shade: #b20710;
+            --border-radius: 4px;
+            --section-bg: #1f1f1f;
+            --project-bg: #252525;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.5;
+            padding-top: 70px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: 1370px;
+            margin: 0 auto;
+            padding: 0 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 3rem 4%;
+            max-width: 1370px;
+            margin: auto;
+            min-height: calc(100vh - 70px);
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/originals/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h2 {
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .business-case-item {
+            background-color: var(--project-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+
+        .business-case-item:hover {
+            transform: scale(1.02);
+        }
+
+        .business-case-title {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .business-case-desc {
+            color: var(--color-highlight);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .business-case-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+        }
+
+        .business-case-desc pre {
+            background-color: #1a1a1a;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #ffffff;
+            white-space: pre-wrap;
+        }
+
+        .business-case-desc code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 4%;
+            max-width: 1370px;
+            margin: 2rem auto;
+            background: var(--color-bg);
+        }
+
+        .nav-arrow {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            background-color: var(--primary-shade);
+        }
+
+        /* Added styles for the Watch Now button */
+        .watch-now-button {
+            background-color: var(--color-accent);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .watch-now-button:hover {
+            background-color: var(--primary-shade);
+        }
+        
+        .hidden-code {
+            display: none;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre;
+        }
+
+        @media (max-width: 767px) {
+            .section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">GANESH NAIK</div>
+        </div>
+    </nav>
+
+    <main class="section">
+        <h2>Smart Downloads</h2>
+        <div class="business-case-item">
+            <h3 class="business-case-title">What is the Feature About?</h3>
+            <img src="images/smart.jpg" alt="Smart Downloads GIF">
+            <p class="business-case-desc">Imagine boarding a train with no Wi-Fi, yet *Panchayat*’s next episode is ready to watch offline. Netflix’s Smart Downloads feature automatically downloads episodes or movies like *Sacred Games* or *Vincenzo* based on your viewing habits, managing storage and prioritizing content you’re likely to watch next. It’s not just a download—it’s your personal offline curator, ensuring uninterrupted viewing wherever you are.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Why This Matters?</h3>
+            <p class="business-case-desc">This feature is Netflix’s answer to on-the-go viewing. By pre-downloading *Money Heist*’s next episode or *Crash Landing on You*’s finale, it eliminates buffering woes, perfect for India’s 500 million mobile internet users with spotty connectivity. Smart Downloads boosts accessibility, extends viewing time, and reduces churn by ensuring content is always available. With 40% of Indian users relying on offline mode, this feature strengthens Netflix’s appeal in a mobile-first market, keeping subscribers engaged.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Actors Behind the Scenes</h3>
+            <p class="business-case-desc">The Smart Downloads feature is powered by a Priority Queue, which prioritizes download tasks based on factors like user watch history, storage availability, and network conditions. Each task, such as downloading *Delhi Crime*’s next episode, is assigned a priority score, with a Min-Heap ensuring high-priority tasks are processed first. This allows Netflix to manage thousands of download requests efficiently, delivering offline content seamlessly.</p>
+            <button class="watch-now-button" onclick="toggleCode('priorityQueueCode')">Watch now</button>
+            <div id="priorityQueueCode" class="hidden-code">
+import heapq
+import time
+
+class DownloadTask:
+    def __init__(self, user_id, content_id, priority_score):
+        self.user_id = user_id
+        self.content_id = content_id
+        self.priority_score = priority_score
+        self.timestamp = time.time()
+    
+    def __lt__(self, other):
+        return (self.priority_score, self.timestamp) < (other.priority_score, other.timestamp)
+
+class SmartDownloadManager:
+    def __init__(self):
+        self.heap = []
+        self.task_map = {}  # Track tasks by user_id and content_id
+    
+    def add_task(self, user_id, content_id, watch_prob, storage_left, network_speed):
+        # Simplified priority calculation
+        priority_score = watch_prob * (storage_left / 100) * network_speed
+        task = DownloadTask(user_id, content_id, -priority_score)  # Negative for min-heap
+        task_key = (user_id, content_id)
+        if task_key in self.task_map:
+            self.heap.remove(self.task_map[task_key])
+            heapq.heapify(self.heap)
+        self.task_map[task_key] = task
+        heapq.heappush(self.heap, task)
+    
+    def process_next_task(self):
+        if self.heap:
+            task = heapq.heappop(self.heap)
+            del self.task_map[(task.user_id, task.content_id)]
+            return task.user_id, task.content_id, -task.priority_score
+        return None
+    
+    def cancel_task(self, user_id, content_id):
+        task_key = (user_id, content_id)
+        if task_key in self.task_map:
+            task = self.task_map.pop(task_key)
+            self.heap.remove(task)
+            heapq.heapify(self.heap)
+
+# Example: Managing download tasks
+manager = SmartDownloadManager()
+manager.add_task("user123", "DC001", 0.9, 80, 5)
+manager.add_task("user456", "MH002", 0.7, 50, 3)
+result = manager.process_next_task()
+print("Processed task:", result)
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Visualization (Models and Figures)</h3>
+            <p class="business-case-desc">Think of the Priority Queue as a VIP list for *Heeramandi*’s offline downloads. Each task, like downloading *Stranger Things*’s next episode, is ranked by priority in a Min-Heap, with factors like your binge history pushing it to the top. When Wi-Fi connects, Netflix pops the highest-priority task, downloads it, and updates storage. Redis caches user preferences and task metadata, ensuring quick task scheduling via an API for a smooth offline experience.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Efficiency Analysis</h3>
+            <p class="business-case-desc">The Priority Queue is a master of efficiency for Smart Downloads. Adding a task takes O(log n) time, where n is the number of tasks, due to heap insertion. Processing the top task is O(log n) for extraction. Space complexity is O(n) for the heap and task map, scaling well for Netflix’s millions of users. Caching priorities in Redis reduces scheduling time to O(1), crucial for India’s mobile users with limited connectivity. The trade-off is recomputing priorities for dynamic conditions, but periodic updates keep the system responsive.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Alternative Data Structures to Priority Queue</h3>
+            <p class="business-case-desc">Priority Queues are ideal for managing download tasks, but what if they weren’t available? Let’s explore four alternatives—FIFO Queue, Sorted List, Binary Search Tree, and Round-Robin Scheduler—and why Priority Queues remain the best.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">1) FIFO Queue</h3>
+            <p class="business-case-desc">Description: Processes download tasks in first-in, first-out order. <br> Complexity: Insert: O(1); Process: O(1); Space: O(n). <br> Drawback: Ignores task priority, delaying critical downloads like *Mismatched*’s next episode during limited connectivity. <br>
+            <button class="watch-now-button" onclick="toggleCode('fifoQueueCode')">Watch now</button>
+            <div id="fifoQueueCode" class="hidden-code">
+from collections import deque
+
+class FIFOQueue:
+    def __init__(self):
+        self.queue = deque()
+    
+    def add_task(self, user_id, content_id, priority_score):
+        self.queue.append((user_id, content_id, priority_score))
+    
+    def process_next_task(self):
+        return self.queue.popleft() if self.queue else None
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">2) Sorted List</h3>
+            <p class="business-case-desc">Description: Maintains tasks sorted by priority in a list. <br> Complexity: Insert: O(n); Process: O(1); Space: O(n). <br> Drawback: Linear insertion time is too slow for Netflix’s frequent task updates during peak usage. <br>
+            <button class="watch-now-button" onclick="toggleCode('sortedListCode')">Watch now</button>
+            <div id="sortedListCode" class="hidden-code">
+class SortedList:
+    def __init__(self):
+        self.list = []
+    
+    def add_task(self, user_id, content_id, priority_score):
+        self.list.append((priority_score, user_id, content_id))
+        self.list.sort()
+    
+    def process_next_task(self):
+        return self.list.pop(0)[1:] if self.list else None
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">3) Binary Search Tree</h3>
+            <p class="business-case-desc">Description: Stores tasks in a BST, ordered by priority score. <br> Complexity: Insert/Process: O(log n) average, O(n) worst; Space: O(n). <br> Drawback: Potential imbalance and higher overhead than heaps make it less efficient for frequent task processing. <br>
+            <button class="watch-now-button" onclick="toggleCode('bstCode')">Watch now</button>
+            <div id="bstCode" class="hidden-code">
+class BSTNode:
+    def __init__(self, priority_score, user_id, content_id):
+        self.priority_score = priority_score
+        self.user_id = user_id
+        self.content_id = content_id
+        self.left = None
+        self.right = None
+
+class BSTQueue:
+    def __init__(self):
+        self.root = None
+    
+    def add_task(self, user_id, content_id, priority_score):
+        # Insert logic
+        pass
+    
+    def process_next_task(self):
+        # Extract min logic
+        pass
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">4) Round-Robin Scheduler</h3>
+            <p class="business-case-desc">Description: Cycles through tasks in a fixed order, ignoring priority. <br> Complexity: Insert: O(1); Process: O(1); Space: O(n). <br> Drawback: Fails to prioritize urgent downloads, reducing efficiency for users needing *Khakee* offline quickly. <br>
+            <button class="watch-now-button" onclick="toggleCode('roundRobinCode')">Watch now</button>
+            <div id="roundRobinCode" class="hidden-code">
+from collections import deque
+
+class RoundRobinScheduler:
+    def __init__(self):
+        self.queue = deque()
+    
+    def add_task(self, user_id, content_id, priority_score):
+        self.queue.append((user_id, content_id, priority_score))
+    
+    def process_next_task(self):
+        if self.queue:
+            task = self.queue.popleft()
+            self.queue.append(task)
+            return task
+        return None
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Why Priority Queue is Better?</h3>
+            <p class="business-case-desc">Efficiency: Priority Queues offer O(log n) for insert/process, faster than Sorted Lists (O(n) insert) or BSTs in worst cases (O(n)). FIFO and Round-Robin lack prioritization.<br>
+Prioritization: Ensures high-priority tasks like *All of Us Are Dead*’s next episode download first, unlike FIFO or Round-Robin.<br>
+Simplicity: Min-Heap is easy to maintain compared to BST’s balancing or Sorted List’s linear updates.<br>
+Scalability: With Redis caching, Priority Queues handle Netflix’s massive download demands, ensuring offline access for millions.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Learnings</h3>
+            <p class="business-case-desc">Priority Queues’ efficient task handling (O(log n)) ensures timely downloads, keeping *The Expanse* ready offline.<br>
+Supporting offline viewing taps into India’s 40% offline users, boosting accessibility and retention.<br>
+Redis caching optimizes task scheduling, vital for India’s 80% mobile traffic with unstable networks.<br>
+The queue scales with Netflix’s growing catalog, including originals like *Mismatched*, ensuring robust downloads.<br>
+Dynamic prioritization adapts to user habits, maintaining efficiency during peak travel or viewing times.</p>
+        </div>
+    </main>
+
+    <div class="nav-arrows">
+        <a href="business-case8.html" class="nav-arrow">← Previous</a>
+        <a href="index.html" class="nav-arrow">X Close Business Case </a>
+        <a href="business-case10.html" class="nav-arrow">Next →</a>
+    </div>
+
+    <script>
+        function toggleCode(id) {
+            var code = document.getElementById(id);
+            if (code.style.display === "block") {
+                code.style.display = "none";
+            } else {
+                code.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

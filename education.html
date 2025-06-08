@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education | Ganesh Naik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #141414;
+            --color-text: #ffffff;
+            --color-accent: #e50914;
+            --color-highlight: #b3b3b3;
+            --color-muted: #737373;
+            --color-shadow: rgba(0, 0, 0, 0.3);
+            --primary-shade: #b20710;
+            --border-radius: 4px;
+            --section-bg: #1f1f1f;
+            --project-bg: #252525;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.5;
+            padding-top: 70px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: 1370px;
+            margin: 0 auto;
+            padding: 0 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 3rem 4%;
+            max-width: 1370px;
+            margin: auto;
+            min-height: calc(100vh - 70px);
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/originals/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h2 {
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .education-content {
+            background: var(--project-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+
+        .education-content:hover {
+            transform: scale(1.02);
+        }
+
+        .education-item h3 {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .edu-institute, .edu-year, .edu-grade {
+            color: var(--color-highlight);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-grade {
+            color: var(--color-accent);
+        }
+
+        .nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 4%;
+            max-width: 1370px;
+            margin: 2rem auto;
+            background: var(--color-bg);
+        }
+
+        .nav-arrow {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            background-color: var(--primary-shade);
+        }
+
+        @media (max-width: 767px) {
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .education-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Ganesh Naik</div>
+        </div>
+    </nav>
+
+    <main class="section">
+        <h2>Education</h2>
+        <div class="education-content">
+            <div class="education-item">
+                <h3>Bachelor of Engineering in Computer Science</h3>
+                <p class="edu-institute">KLE Technological University</p>
+                <p class="edu-institute">Hubballi, Karnataka</p>
+                <p class="edu-year">Graduation: 2026</p>
+                <p class="edu-grade">CGPA: 8.18</p>
+            </div>
+        </div>
+        <div class="education-content">
+            <div class="education-item">
+                <h3>Higher Secondary</h3>
+                <p class="edu-institute">Ramabai Jahagirdar PU Science College</p>
+                <p class="edu-institute">Kalaburagi, Karnataka</p>
+                <p class="edu-year">2020-2022</p>
+                <p class="edu-grade">Percentage: 96.4%</p>
+            </div>
+        </div>
+                <div class="education-content">
+            <div class="education-item">
+                <h3>Secondary</h3>
+                <p class="edu-institute">Shree Swaminarayan Gurukul International School </p>
+                <p class="edu-institute">Kalaburagi, Karnataka</p>
+                <p class="edu-year">2018-2020</p>
+                <p class="edu-grade">Percentage: 93.4%</p>
+            </div>
+        </div>
+    </main>
+
+    <div class="nav-arrows">
+        <a href="portfolio-details.html" class="nav-arrow">← Previous</a>
+        <a href="index.html" class="nav-arrow">X Close Education </a>
+        <a href="skills.html" class="nav-arrow">Next →</a>
+    </div>
+</body>
+</html>

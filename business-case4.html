@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Case 4 | GANESH NAIK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #141414;
+            --color-text: #ffffff;
+            --color-accent: #e50914;
+            --color-highlight: #b3b3b3;
+            --color-muted: #737373;
+            --color-shadow: rgba(0, 0, 0, 0.3);
+            --primary-shade: #b20710;
+            --border-radius: 4px;
+            --section-bg: #1f1f1f;
+            --project-bg: #252525;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.5;
+            padding-top: 70px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: 1370px;
+            margin: 0 auto;
+            padding: 0 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 3rem 4%;
+            max-width: 1370px;
+            margin: auto;
+            min-height: calc(100vh - 70px);
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/originals/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h2 {
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .business-case-item {
+            background-color: var(--project-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+
+        .business-case-item:hover {
+            transform: scale(1.02);
+        }
+
+        .business-case-title {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .business-case-desc {
+            color: var(--color-highlight);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .business-case-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+        }
+
+        .business-case-desc pre {
+            background-color: #1a1a1a;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #ffffff;
+            white-space: pre-wrap;
+        }
+
+        .business-case-desc code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 4%;
+            max-width: 1370px;
+            margin: auto;
+            background: var(--color-bg);
+        }
+
+        .nav-arrow {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            background-color: var(--primary-shade);
+        }
+
+        /* Added styles for the Watch Now button */
+        .watch-now-button {
+            background-color: var(--color-accent);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .watch-now-button:hover {
+            background-color: var(--primary-shade);
+        }
+        
+        .hidden-code {
+            display: none;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre;
+        }
+
+        @media (max-width: 767px) {
+            .section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"> GANESH NAIK </div>
+        </div>
+    </nav>
+
+    <main class="section">
+        <h2> Series Episode and Season Management </h2>
+        <div class="business-case-item">
+            <h3 class="business-case-title">What is the Feature About?</h3>
+            <img src="videos/bc4.gif" alt="Episode Management GIF">
+            <p class="business-case-desc">Ever notice how Netflix makes binge watching feel effortless? One episode of Stranger Things ends, and the next one cues up like clockwork. That’s the Series Episode and Season Management feature at play, orchestrating smooth transitions across episodes and seasons for shows like The Witcher or Sacred Games. It’s not just playback, it’s a navigation masterpiece that keeps you immersed in the story, no interruptions needed.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Why This Matters?</h3>
+            <p class="business-case-desc">This feature is Netflix’s way of rolling out the red carpet for your binge watching marathon. By ensuring seamless episode and season transitions, it eliminates the annoyance of manual navigation, letting you stay lost in Mirzapur’s gritty drama or Money Heist’s heist thrills. It tracks your progress, handles multi-season logic, and supports features like “Skip Intro” or “Next Episode.” In India, where 60% of viewers binge-watch series, this keeps users engaged, reduces drop-off, and maximizes Netflix’s retention power, making every show feel like a can’t-stop journey.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Actors Behind the Scenes</h3>
+            <p class="business-case-desc">The star of this feature is a Graph, a data structure that maps episodes and seasons as nodes connected by edges representing playback sequences. Imagine Delhi Crime Season 1, Episode 1 as a node linked to Episode 2, and Season 1 to Season 2. The graph uses adjacency lists to track these relationships, enabling Netflix to guide you from one episode to the next or jump between seasons effortlessly. It’s the engine that powers your binge, ensuring every transition is smooth and intuitive.</p>
+            <button class="watch-now-button" onclick="toggleCode('graphCode')">Watch now</button>
+            <div id="graphCode" class="hidden-code">
+class Graph:
+    def __init__(self):
+        self.graph = {}  # Adjacency list
+        self.metadata = {}  # Store episode/season details
+    
+    def add_node(self, node_id, metadata):
+        if node_id not in self.graph:
+            self.graph[node_id] = []
+            self.metadata[node_id] = metadata
+    
+    def add_edge(self, from_node, to_node):
+        self.graph[from_node].append(to_node)
+    
+    def get_next_episode(self, current_node):
+        if current_node in self.graph and self.graph[current_node]:
+            return self.graph[current_node][0], self.metadata.get(self.graph[current_node][0])
+        return None, None
+    
+    def get_season_episodes(self, season_id):
+        return [(node, self.metadata[node]) for node in self.graph if node.startswith(season_id)]
+
+# Example: Building graph for a series
+episode_graph = Graph()
+episode_graph.add_node("S1E1", {"title": "Episode 1", "series": "Delhi Crime", "season": 1})
+episode_graph.add_node("S1E2", {"title": "Episode 2", "series": "Delhi Crime", "season": 1})
+episode_graph.add_node("S2E1", {"title": "Episode 1", "series": "Delhi Crime", "season": 2})
+episode_graph.add_edge("S1E1", "S1E2")
+episode_graph.add_edge("S1E2", "S2E1")
+next_ep, metadata = episode_graph.get_next_episode("S1E1")
+print("Next episode after S1E1:", metadata)
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Visualization (Models and Figures)</h3>
+            <p class="business-case-desc">Think of the Graph as a roadmap for Panchayat’s episodes. Each node is an episode or season—say, Season 1, Episode 1—connected by edges to the next episode or season. The graph’s adjacency list ensures S1E1 points to S1E2, and S1E8 links to S2E1. When you finish an episode, Netflix traverses this graph to fetch the next one, with metadata like titles and durations stored alongside. Redis caches frequently accessed paths, like popular series’ episode sequences, serving them instantly to your player via an API.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Efficiency Analysis</h3>
+            <p class="business-case-desc">The Graph is a speed machine for episode navigation. Building the graph for a series with 100 episodes takes O(V + E) time, where V is nodes (episodes/seasons) and E is edges (transitions). Fetching the next episode is O(1) using adjacency lists, perfect for real-time playback. Space complexity is O(V + E) to store the graph and metadata, which scales well for Netflix’s series catalog. Caching episode sequences in Redis drops query time to O(1), crucial for India’s mobile-first users who expect instant transitions. The trade-off is updating the graph for new seasons, but incremental updates keep the system lightweight and current.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Alternative Data Structures to Graph</h3>
+            <p class="business-case-desc">Graphs are ideal for episode navigation, but what if we couldn’t use them? Let’s explore four alternatives: Array, Tree, Linked List, and Relational Database, and see why Graphs remain the champion.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">1) Array</h3>
+            <p class="business-case-desc">Description: Store episodes in a flat array, indexed by episode number, with season boundaries marked. <br> Complexity: Access: O(1); Update: O(n) for insertions; Space: O(n). <br> Drawback: Linear updates for new episodes/seasons and lack of relational flexibility make it inefficient for complex series. <br>
+            <button class="watch-now-button" onclick="toggleCode('arrayCode')">Watch now</button>
+            <div id="arrayCode" class="hidden-code">
+class ArrayNavigator:
+    def __init__(self):
+        self.episodes = []
+    
+    def add_episode(self, episode_id, metadata):
+        self.episodes.append((episode_id, metadata))
+    
+    def get_next_episode(self, current_idx):
+        if current_idx + 1 < len(self.episodes):
+            return self.episodes[current_idx + 1]
+        return None
+            </div>
+            </p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">2) Tree</h3>
+            <p class="business-case-desc">Description: Organize seasons as nodes, with episodes as children in a hierarchical tree. <br> Complexity: Access: O(n); Update: O(n); Space: O(n). <br> Drawback: Hierarchical structure complicates sequential navigation across seasons, unlike Graphs’ flexible edges. <br>
+            <button class="watch-now-button" onclick="toggleCode('treeCode')">Watch now</button>
+            <div id="treeCode" class="hidden-code">
+class TreeNode:
+    def __init__(self, id, metadata):
+        self.id = id
+        self.metadata = metadata
+        self.children = []
+    
+class TreeNavigator:
+    def __init__(self):
+        self.root = None
+    
+    def add_episode(self, season_id, episode_id, metadata):
+        # Insert into tree
+        pass
+    
+    def get_next_episode(self, episode_id):
+        # Traverse tree
+        pass
+            </div>
+            </p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">3) Linked List</h3>
+            <p class="business-case-desc">Description: Store episodes in a singly linked list, ordered by playback sequence. <br> Complexity: Access: O(n); Update: O(n); Space: O(n). <br> Drawback: Linear access time is too slow for quick navigation, especially for large series. <br>
+            <button class="watch-now-button" onclick="toggleCode('linkedListCode')">Click here</button>
+            <div id="linkedListCode" class="hidden-code">
+class ListNode:
+    def __init__(self, id, metadata):
+        self.id = id
+        self.metadata = metadata
+        self.next = None
+
+class LinkedListNavigator:
+    def __init__(self):
+        self.head = None
+    
+    def add_episode(self, id, metadata):
+        node = ListNode(id, metadata)
+        if not self.head:
+            self.head = node
+        else:
+            curr = self.head
+            while curr.next:
+                curr = curr.next
+            curr.next = node
+    
+    def get_next_episode(self, id):
+        curr = self.head
+        while curr and curr.id != id:
+            curr = curr.next
+        return curr.next if curr else None
+            </div>
+            </p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">4) Relational Database</h3>
+            <p class="business-case-desc">Description: Store episodes and seasons in a tables, with foreign keys for relationships. <br> Complexity: Access: O(log n); Update: O(log n); Space: O(n). <br> Drawback: Database queries add latency compared to in-memory Graphs, unsuitable for real-time navigation. <br>
+            <button class="watch-now-button" onclick="toggleCode('dbCode')">Watch now</button>
+            <div id="dbCode" class="hidden-code">
+class DBNavigator:
+    def __init__(self):
+        self.db = {}  # Simulate database
+    
+    def add_episode(self, id, metadata, next_id=None):
+        self.db[id] = {'metadata': metadata, 'next_id': next_id}
+    
+    def get_next_episode(self, id):
+        return self.db.get(self.db[id]['next_id']) if id in self.db and self.db[id]['next_id'] else None
+            </div>
+            </p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Why Graph is Better?</h3>
+            <p class="business-case-desc">-> Efficiency: Graphs offer O(1) access to next episodes via adjacency lists, faster than Linked Lists (O(n)) or Trees (O(n)). Arrays and Databases match access speed but falter on updates.<br>
+-> Flexibility: Graphs handle complex relationships (e.g., cross-season episodes) better than Arrays or Trees, which are rigid or hierarchical.<br>
+-> Simplicity: Graphs are easier to maintain than Databases (no query overhead) and more intuitive for sequential navigation than Trees.<br>
+-> Scalability: With Redis caching, Graphs support Netflix’s real-time navigation needs, delivering seamless transitions to millions.</p>
+</div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Learnings</h3>
+            <p class="business-case-desc">Graphs’ fast navigation (O(1)) ensures seamless episode transitions, keeping users immersed in series like Heeramandi.<br>
+Striking India’s binging culture taps into 60% of series viewers, boosting retention and subscriptions.<br>
+Redis caching delivers instant episode cues, vital for India’s 80% mobile traffic, ensuring a flawless experience.<br>
+The graph scales with Netflix’s growing catalog, including originals like Mismatched, keeping navigation robust.<br>
+Dynamic updates to the graph for new seasons or specials maintain engagement during peak viewing hours.</p>
+        </div>
+    </main>
+
+    <div class="nav-arrows">
+        <a href="business-case3.html" class="nav-arrow">← Previous</a>
+        <a href="index.html" class="nav-arrow">X Close Business Case </a>
+        <a href="business-case5.html" class="nav-arrow">Next →</a>
+    </div>
+
+    <script>
+        function toggleCode(id) {
+            var code = document.getElementById(id);
+            if (code.style.display === "block") {
+                code.style.display = "none";
+            } else {
+                code.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

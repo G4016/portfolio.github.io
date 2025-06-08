@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Case 8: Screen Lock Feature | Netflix Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #141414;
+            --color-text: #ffffff;
+            --color-accent: #e50914;
+            --color-highlight: #b3b3b3;
+            --color-muted: #737373;
+            --color-shadow: rgba(0, 0, 0, 0.3);
+            --primary-shade: #b20710;
+            --border-radius: 4px;
+            --section-bg: #1f1f1f;
+            --project-bg: #252525;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.5;
+            padding-top: 70px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: 1370px;
+            margin: 0 auto;
+            padding: 0 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 3rem 4%;
+            max-width: 1370px;
+            margin: auto;
+            min-height: calc(100vh - 70px);
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/originals/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h2 {
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .business-case-item {
+            background-color: var(--project-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+
+        .business-case-item:hover {
+            transform: scale(1.02);
+        }
+
+        .business-case-title {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .business-case-desc {
+            color: var(--color-highlight);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .business-case-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+        }
+
+        .business-case-desc pre {
+            background-color: #1a1a1a;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #ffffff;
+            white-space: pre-wrap;
+        }
+
+        .business-case-desc code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 4%;
+            max-width: 1370px;
+            margin: 2rem auto;
+            background: var(--color-bg);
+        }
+
+        .nav-arrow {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            background-color: var(--primary-shade);
+        }
+
+        /* Added styles for the Watch Now button */
+        .watch-now-button {
+            background-color: var(--color-accent);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .watch-now-button:hover {
+            background-color: var(--primary-shade);
+        }
+        
+        .hidden-code {
+            display: none;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre;
+        }
+
+        @media (max-width: 767px) {
+            .section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">GANESH NAIK</div>
+        </div>
+    </nav>
+
+    <main class="section">
+        <h2>Screen Lock Feature</h2>
+        <div class="business-case-item">
+            <h3 class="business-case-title">What is the Feature About?</h3>
+            <img src="videos/screen.gif" alt="Screen Lock Feature GIF">
+            <p class="business-case-desc">Ever accidentally paused *Money Heist* during a tense heist or skipped a *Panchayat* scene while grabbing snacks? Netflix’s Screen Lock feature lets you lock the playback interface, disabling controls to prevent unwanted interruptions. It’s not just a button—it’s your shield for staying immersed in *Sacred Games* or *Stranger Things*, ensuring a distraction-free binge-watching experience.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Why This Matters?</h3>
+            <p class="business-case-desc">This feature is Netflix’s commitment to uninterrupted storytelling. By locking the interface, it saves you from accidental taps during *Vincenzo*’s climactic moments or *Crash Landing on You*’s emotional peaks. In India, where 75% of streaming happens on mobile devices, this feature enhances user satisfaction, especially for viewers on the go. It reduces frustration, extends viewing sessions, and reinforces Netflix’s edge in delivering a seamless, user-centric experience, boosting retention in a competitive market.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Actors Behind the Scenes</h3>
+            <p class="business-case-desc">The Screen Lock feature is driven by a Finite State Machine (FSM), a model that manages the player’s interface states: Unlocked, Locked, and Transitioning. Each state defines allowed actions—e.g., no pausing in Locked state—and transitions occur on user inputs like “Lock” or “Unlock.” The FSM ensures predictable behavior, so locking *Delhi Crime* disables controls instantly, keeping your viewing flow intact across millions of sessions.</p>
+            <button class="watch-now-button" onclick="toggleCode('fsmCode')">Watch now</button>
+            <div id="fsmCode" class="hidden-code">
+class State:
+    def __init__(self, name):
+        self.name = name
+        self.transitions = {}
+    
+    def add_transition(self, event, next_state):
+        self.transitions[event] = next_state
+    
+    def on_event(self, event):
+        return self.transitions.get(event, self)
+
+class ScreenLockFSM:
+    def __init__(self):
+        self.unlocked = State("Unlocked")
+        self.locked = State("Locked")
+        self.transitioning = State("Transitioning")
+        
+        self.unlocked.add_transition("lock", self.transitioning)
+        self.locked.add_transition("unlock", self.transitioning)
+        self.transitioning.add_transition("confirm_lock", self.locked)
+        self.transitioning.add_transition("confirm_unlock", self.unlocked)
+        
+        self.current_state = self.unlocked
+    
+    def process_event(self, event):
+        self.current_state = self.current_state.on_event(event)
+        return self.current_state.name
+    
+    def is_locked(self):
+        return self.current_state.name == "Locked"
+
+# Example: Managing screen lock
+fsm = ScreenLockFSM()
+print("Initial state:", fsm.current_state.name)
+fsm.process_event("lock")
+fsm.process_event("confirm_lock")
+print("After lock:", fsm.current_state.name)
+fsm.process_event("unlock")
+fsm.process_event("confirm_unlock")
+print("After unlock:", fsm.current_state.name)
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Visualization (Models and Figures)</h3>
+            <p class="business-case-desc">Picture the FSM as a traffic light system for *Heeramandi*’s player interface. It’s either Unlocked (green, all controls active), Locked (red, controls disabled), or Transitioning (yellow, processing lock/unlock). User actions, like tapping “Lock,” trigger state changes, with the FSM ensuring only valid transitions occur. Session data is cached in Redis to persist the lock state across pauses, delivering a consistent experience via the player’s API.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Efficiency Analysis</h3>
+            <p class="business-case-desc">The FSM is a lightweight powerhouse for state management. Processing an event takes O(1) time, as transitions are direct lookups in a state’s transition table. Space complexity is O(s * e), where s is the number of states (small, e.g., 3) and e is events, making it negligible. Caching lock states in Redis ensures O(1) state retrieval, critical for India’s mobile-heavy users who demand instant responses. The trade-off is defining all possible transitions upfront, but the FSM’s simplicity keeps maintenance minimal, even for Netflix’s scale.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Alternative Approaches to Finite State Machine</h3>
+            <p class="business-case-desc">FSMs are perfect for managing screen lock states, but what if they weren’t an option? Let’s explore four alternatives—Boolean Flags, Switch Statements, State Pattern, and Event-Driven Callbacks—and why FSMs remain the top choice.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">1) Boolean Flags</h3>
+            <p class="business-case-desc">Description: Uses a boolean variable to track locked/unlocked state, with conditionals for actions. <br> Complexity: Process: O(1); Space: O(1). <br> Drawback: Becomes unwieldy with multiple states or transitions, leading to error-prone code for Netflix’s complex player. <br>
+            <button class="watch-now-button" onclick="toggleCode('booleanFlagsCode')">Watch now</button>
+            <div id="booleanFlagsCode" class="hidden-code">
+class BooleanLock:
+    def __init__(self):
+        self.is_locked = False
+    
+    def lock(self):
+        self.is_locked = True
+    
+    def unlock(self):
+        self.is_locked = False
+    
+    def process_action(self, action):
+        if self.is_locked and action != "unlock":
+            return "Blocked"
+        return "Allowed"
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">2) Switch Statements</h3>
+            <p class="business-case-desc">Description: Uses a switch-case block to handle states and events. <br> Complexity: Process: O(1); Space: O(1). <br> Drawback: Hard to scale or modify for new states, making it less maintainable than FSMs for Netflix’s dynamic needs. <br>
+            <button class="watch-now-button" onclick="toggleCode('switchStatementsCode')">Watch now</button>
+            <div id="switchStatementsCode" class="hidden-code">
+class SwitchLock:
+    def __init__(self):
+        self.state = "Unlocked"
+    
+    def process_event(self, event):
+        if self.state == "Unlocked":
+            if event == "lock":
+                self.state = "Locked"
+        elif self.state == "Locked":
+            if event == "unlock":
+                self.state = "Unlocked"
+        return self.state
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">3) State Pattern</h3>
+            <p class="business-case-desc">Description: Encapsulates states as objects with methods for transitions. <br> Complexity: Process: O(1); Space: O(s). <br> Drawback: More complex implementation than FSMs, with higher overhead for simple state management like screen locking. <br>
+            <button class="watch-now-button" onclick="toggleCode('statePatternCode')">Watch now</button>
+            <div id="statePatternCode" class="hidden-code">
+class State:
+    def handle_event(self, event):
+        pass
+
+class UnlockedState(State):
+    def handle_event(self, event):
+        if event == "lock":
+            return LockedState()
+        return self
+
+class LockedState(State):
+    def handle_event(self, event):
+        if event == "unlock":
+            return UnlockedState()
+        return self
+
+class StatePatternLock:
+    def __init__(self):
+        self.state = UnlockedState()
+    
+    def process_event(self, event):
+        self.state = self.state.handle_event(event)
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">4) Event-Driven Callbacks</h3>
+            <p class="business-case-desc">Description: Uses callback functions triggered by events to manage state. <br> Complexity: Process: O(1); Space: O(e). <br> Drawback: Lacks clear state structure, leading to spaghetti code and debugging challenges for Netflix’s scale. <br>
+            <button class="watch-now-button" onclick="toggleCode('callbacksCode')">Watch now</button>
+            <div id="callbacksCode" class="hidden-code">
+class CallbackLock:
+    def __init__(self):
+        self.state = "Unlocked"
+        self.callbacks = {}
+    
+    def register_callback(self, event, callback):
+        self.callbacks[event] = callback
+    
+    def process_event(self, event):
+        if event in self.callbacks:
+            self.state = self.callbacks[event](self.state)
+        return self.state
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Why Finite State Machine is Better?</h3>
+            <p class="business-case-desc">Efficiency: FSMs offer O(1) event processing, matching alternatives but with clearer structure than Boolean Flags or Callbacks.<br>
+Clarity: FSMs provide a defined state-transition model, avoiding the complexity of State Patterns or the messiness of Switch Statements.<br>
+Scalability: FSMs handle Netflix’s simple lock/unlock needs with minimal overhead, unlike Callbacks’ unstructured approach.<br>
+Reliability: With Redis caching, FSMs ensure consistent state management, delivering seamless lock toggling to millions.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Learnings</h3>
+            <p class="business-case-desc">FSMs’ instant transitions (O(1)) ensure smooth lock toggling, keeping *All of Us Are Dead* uninterrupted.<br>
+Supporting distraction-free viewing taps into India’s 75% mobile streamers, boosting satisfaction and retention.<br>
+Redis caching maintains lock states across sessions, vital for India’s 80% mobile traffic, ensuring consistency.<br>
+The FSM scales with Netflix’s growing user base, handling *Khakee: The Bihar Chapter* with ease.<br>
+Clear state management adapts to user interactions, maintaining reliability during peak viewing hours.</p>
+        </div>
+    </main>
+
+    <div class="nav-arrows">
+        <a href="business-case7.html" class="nav-arrow">← Previous</a>
+        <a href="index.html" class="nav-arrow">X Close Business Case </a>
+        <a href="business-case9.html" class="nav-arrow">Next →</a>
+    </div>
+
+    <script>
+        function toggleCode(id) {
+            var code = document.getElementById(id);
+            if (code.style.display === "block") {
+                code.style.display = "none";
+            } else {
+                code.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

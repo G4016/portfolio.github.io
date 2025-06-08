@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Case 10 | GANESH NAIK </title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #141414;
+            --color-text: #ffffff;
+            --color-accent: #e50914;
+            --color-highlight: #b3b3b3;
+            --color-muted: #737373;
+            --color-shadow: rgba(0, 0, 0, 0.3);
+            --primary-shade: #b20710;
+            --border-radius: 4px;
+            --section-bg: #1f1f1f;
+            --project-bg: #252525;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.5;
+            padding-top: 70px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: 1370px;
+            margin: 0 auto;
+            padding: 0 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 3rem 4%;
+            max-width: 1370px;
+            margin: auto;
+            min-height: calc(100vh - 70px);
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/originals/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h2 {
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .business-case-item {
+            background-color: var(--project-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+
+        .business-case-item:hover {
+            transform: scale(1.02);
+        }
+
+        .business-case-title {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .business-case-desc {
+            color: var(--color-highlight);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .business-case-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+        }
+
+        .business-case-desc pre {
+            background-color: #1a1a1a;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #ffffff;
+            white-space: pre-wrap;
+        }
+
+        .business-case-desc code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 4%;
+            max-width: 1370px;
+            margin: 2rem auto;
+            background: var(--color-bg);
+        }
+
+        .nav-arrow {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            background-color: var(--primary-shade);
+        }
+
+        /* Added styles for the Watch Now button */
+        .watch-now-button {
+            background-color: var(--color-accent);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .watch-now-button:hover {
+            background-color: var(--primary-shade);
+        }
+        
+        .hidden-code {
+            display: none;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre;
+        }
+
+        @media (max-width: 767px) {
+            .section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">GANESH NAIK </div>
+        </div>
+    </nav>
+
+    <main class="section">
+        <h2>New and Hot Notifications</h2>
+        <div class="business-case-item">
+            <h3 class="business-case-title">What is the Feature About?</h3>
+            <img src="videos/bc10.gif" alt="New and Hot Notifications GIF">
+            <p class="business-case-desc">Ever get a ping about *Panchayat*’s new season or *Money Heist* trending worldwide? Netflix’s New and Hot Notifications feature alerts you to fresh releases and trending titles like *Vincenzo* or *Sacred Games*, delivered via push notifications or in-app banners. It’s not just a nudge—it’s your guide to what’s buzzing, ensuring you never miss the next big hit in Netflix’s ever-growing catalog.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Why This Matters?</h3>
+            <p class="business-case-desc">This feature is Netflix’s megaphone for keeping users in the loop. By spotlighting *Crash Landing on You*’s new episodes or *Stranger Things*’ viral surge, it drives discovery and engagement. In India, where 70% of users discover content via notifications, this feature fuels binge-watching, boosts watch time, and reduces churn by keeping viewers excited about fresh content. It’s a key player in Netflix’s strategy to stay relevant in a competitive streaming market, especially for mobile-first audiences.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Actors Behind the Scenes</h3>
+            <p class="business-case-desc">The feature is powered by a Publish-Subscribe (Pub-Sub) pattern, a messaging model where publishers (e.g., Netflix’s content system) broadcast events like new releases, and subscribers (users) receive tailored notifications. Each user subscribes to topics like “New Kdrama” or “Trending Sci-Fi,” and the Pub-Sub system routes alerts efficiently. This ensures *Delhi Crime*’s latest season reaches fans instantly, scaling to millions without delay.</p>
+            <button class="watch-now-button" onclick="toggleCode('pubSubCode')">Watch now</button>
+            <div id="pubSubCode" class="hidden-code">
+class Subscriber:
+    def __init__(self, user_id):
+        self.user_id = user_id
+        self.topics = set()
+    
+    def subscribe(self, topic):
+        self.topics.add(topic)
+    
+    def unsubscribe(self, topic):
+        self.topics.discard(topic)
+    
+    def receive_notification(self, topic, message):
+        if topic in self.topics:
+            return f"User {self.user_id} received: {message}"
+        return None
+
+class PubSubSystem:
+    def __init__(self):
+        self.subscribers = {}  # topic -> list of Subscriber
+        self.messages = []  # Store recent messages for late subscribers
+    
+    def register_subscriber(self, user_id, topic):
+        if user_id not in self.subscribers:
+            self.subscribers[user_id] = Subscriber(user_id)
+        self.subscribers[user_id].subscribe(topic)
+        if topic not in self.subscribers:
+            self.subscribers[topic] = []
+        self.subscribers[topic].append(self.subscribers[user_id])
+    
+    def unregister_subscriber(self, user_id, topic):
+        if user_id in self.subscribers:
+            self.subscribers[user_id].unsubscribe(topic)
+            if topic in self.subscribers:
+                self.subscribers[topic] = [s for s in self.subscribers[topic] if s.user_id != user_id]
+    
+    def publish(self, topic, message):
+        self.messages.append((topic, message))
+        if topic in self.subscribers:
+            for subscriber in self.subscribers[topic]:
+                notification = subscriber.receive_notification(topic, message)
+                if notification:
+                    print(notification)
+
+# Example: Managing notifications
+pubsub = PubSubSystem()
+pubsub.register_subscriber("user123", "New Kdrama")
+pubsub.register_subscriber("user456", "Trending Sci-Fi")
+pubsub.publish("New Kdrama", "Vincenzo Season 2 now available!")
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Visualization (Models and Figures)</h3>
+            <p class="business-case-desc">Imagine the Pub-Sub system as a radio station for *Heeramandi*’s updates. Netflix’s content team (publishers) broadcasts signals like “New Sci-Fi release!” to channels (topics). Users (subscribers) tune into channels like “New Kdrama,” receiving alerts for *All of Us Are Dead*. The system routes messages instantly, with Redis caching recent notifications to handle late subscribers. An API delivers these alerts to your phone or app, keeping you in sync with Netflix’s hottest titles.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Efficiency Analysis</h3>
+            <p class="business-case-desc">The Pub-Sub pattern is a speed demon for notifications. Subscribing or unsubscribing takes O(1) time with hash-based topic mappings. Publishing to n subscribers is O(n), but sharding topics across servers scales this efficiently. Space complexity is O(s + t), where s is subscribers and t is topics, manageable for Netflix’s scale. Caching notifications in Redis ensures O(1) delivery for recent messages, vital for India’s mobile users expecting instant alerts. The trade-off is managing topic granularity, but dynamic sharding keeps performance robust.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Alternative Approaches to Publish-Subscribe</h3>
+            <p class="business-case-desc">Pub-Sub is ideal for notifications, but what if it wasn’t an option? Let’s explore four alternatives: Polling, Direct Messaging, Event Queue, and Broadcast, and why Pub-Sub remains the best choice.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">1) Polling</h3>
+            <p class="business-case-desc">Description: Clients periodically check for new content updates. <br> Complexity: Check: O(1); Space: O(1). <br> Drawback: High server load and delayed notifications make it inefficient for real-time alerts like *Mismatched*’s new season. <br>
+            <button class="watch-now-button" onclick="toggleCode('pollingCode')">Watch now</button>
+            <div id="pollingCode" class="hidden-code">
+class PollingSystem:
+    def __init__(self):
+        self.updates = {}
+    
+    def add_update(self, content_id, message):
+        self.updates[content_id] = message
+    
+    def poll(self, user_id):
+        return list(self.updates.values())
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">2) Direct Messaging</h3>
+            <p class="business-case-desc">Description: Sends notifications directly to each user’s device. <br> Complexity: Send: O(n); Space: O(n). <br> Drawback: Lacks topic-based filtering, overwhelming users with irrelevant alerts for *Khakee* or *The Expanse*. <br>
+            <button class="watch-now-button" onclick="toggleCode('directMessagingCode')">Watch now</button>
+            <div id="directMessagingCode" class="hidden-code">
+class DirectMessaging:
+    def __init__(self):
+        self.users = []
+    
+    def register_user(self, user_id):
+        self.users.append(user_id)
+    
+    def send_message(self, message):
+        for user_id in self.users:
+            print(f"Sent to {user_id}: {message}")
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">3) Event Queue</h3>
+            <p class="business-case-desc">Description: Stores notifications in a queue for sequential processing. <br> Complexity: Enqueue: O(1); Process: O(n); Space: O(n). <br> Drawback: Sequential delivery delays notifications for large user bases, unsuitable for *Stranger Things*’ viral surges. <br>
+            <button class="watch-now-button" onclick="toggleCode('eventQueueCode')">Watch now</button>
+            <div id="eventQueueCode" class="hidden-code">
+from collections import deque
+
+class EventQueue:
+    def __init__(self):
+        self.queue = deque()
+    
+    def add_event(self, user_id, message):
+        self.queue.append((user_id, message))
+    
+    def process_next(self):
+        return self.queue.popleft() if self.queue else None
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">4) Broadcast</h3>
+            <p class="business-case-desc">Description: Sends all notifications to all users, with client-side filtering. <br> Complexity: Send: O(n); Space: O(n). <br> Drawback: Wastes bandwidth and overwhelms devices with irrelevant alerts, inefficient for *Delhi Crime*’s niche fans. <br>
+            <button class="watch-now-button" onclick="toggleCode('broadcastCode')">Watch now</button>
+            <div id="broadcastCode" class="hidden-code">
+class BroadcastSystem:
+    def __init__(self):
+        self.users = []
+    
+    def register_user(self, user_id):
+        self.users.append(user_id)
+    
+    def broadcast(self, message):
+        for user_id in self.users:
+            print(f"Broadcast to {user_id}: {message}")
+            </div>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Why Publish-Subscribe is Better?</h3>
+            <p class="business-case-desc">Efficiency: Pub-Sub offers O(1) subscribe/unsubscribe and O(n) publishing, more scalable than Polling’s server load or Event Queue’s delays.<br>
+Personalization: Filters notifications by topic, unlike Direct Messaging or Broadcast’s untargeted approach.<br>
+Simplicity: Easier to manage than Event Queues’ sequential processing or Polling’s client-side checks.<br>
+Scalability: With Redis caching and topic sharding, Pub-Sub delivers real-time alerts to millions, perfect for Netflix’s global reach.</p>
+        </div>
+        <div class="business-case-item">
+            <h3 class="business-case-title">Learnings</h3>
+            <p class="business-case-desc">Pub-Sub’s fast delivery ensures timely alerts for *The Witcher*’s new episodes, driving user excitement.<br>
+Personalized notifications tap into India’s 70% discovery-driven viewers, boosting engagement and retention.<br>
+Redis caching optimizes alert delivery, vital for India’s 80% mobile traffic, ensuring instant updates.<br>
+The system scales with Netflix’s growing catalog, including originals like *Khakee: The Bihar Chapter*, keeping users informed.<br>
+Topic-based filtering adapts to user preferences, maintaining relevance during content surges.</p>
+        </div>
+    </main>
+
+    <div class="nav-arrows">
+        <a href="business-case9.html" class="nav-arrow">← Previous</a>
+        <a href="index.html" class="nav-arrow">X Close Business Case </a>
+        <a href="business-case11.html" class="nav-arrow">Next →</a>
+    </div>
+
+    <script>
+        function toggleCode(id) {
+            var code = document.getElementById(id);
+            if (code.style.display === "block") {
+                code.style.display = "none";
+            } else {
+                code.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
