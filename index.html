@@ -1,203 +1,470 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APS | Naik's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #141414;
+            --color-text: #ffffff;
+            --color-accent: #e50914;
+            --color-highlight: #b3b3b3;
+            --color-muted: #737373;
+            --color-shadow: rgba(0, 0, 0, 0.3);
+            --primary-shade: #b20710;
+            --border-radius: 4px;
+            --hero-name-color: #ffffff;
+            --hero-tagline-bg: rgba(0, 0, 0, 0.7);
+            --section-bg: #1f1f1f;
+            --project-bg: #252525;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.5;
+            padding-top: 70px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: 1370px;
+            margin: 0 auto;
+            padding: 0 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 70px);
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/originals/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 2rem 4%;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--hero-name-color);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            background-color: var(--hero-tagline-bg);
+            padding: 0.75rem 1rem;
+            border-radius: var(--border-radius);
+            color: var(--color-text);
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 3rem 4%;
+            max-width: 1370px;
+            margin: auto;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/originals/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h2 {
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .nav-button {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-button:hover {
+            background-color: var(--primary-shade);
+        }
+
+        .project-grid, .business-case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-item, .business-case-item {
+            background-color: var(--project-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+            position: relative;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .project-item:hover, .business-case-item:hover {
+            transform: scale(1.02);
+        }
+
+        .project-item img, .business-case-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+        }
+
+        .project-number, .business-case-number {
+            position: absolute;
+            top: 10px;
+            left: -25px;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            opacity: 0.9;
+            transform: rotate(-15deg);
+        }
+
+        .project-desc, .business-case-desc {
+            color: var(--color-highlight);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-link, .business-case-link {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-link:hover, .business-case-link:hover {
+            background-color: var(--primary-shade);
+        }
+
+        .contact-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 2rem 0;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .form-group {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+        }
+
+        input, textarea {
+            padding: 0.75rem;
+            border: 1px solid #333;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            background-color: #2a2a2a;
+            color: var(--color-text);
+        }
+
+        button {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: var(--primary-shade);
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-button {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: var(--color-text);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-button img {
+            margin-right: 0.5rem;
+        }
+
+        .contact-button:hover {
+            background-color: #444;
+        }
+
+        .contact-button:nth-child(2) {
+            background-color: var(--color-accent);
+        }
+
+        .contact-button:nth-child(2):hover {
+            background-color: var(--primary-shade);
+        }
+
+        .nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 4%;
+            max-width: 1370px;
+            margin: 2rem auto;
+            background: var(--color-bg);
+        }
+
+        .nav-arrow {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            background-color: var(--primary-shade);
+        }
+
+        @media (max-width: 767px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .project-grid, .business-case-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .project-number, .business-case-number {
+                font-size: 2rem;
+                left: -10px;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .project-number, .business-case-number {
+                font-size: 2.5rem;
+                left: -15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">Ganesh Naik</div>
-            <ul class="nav-links">
-                <li><a href="#AboutMe">About me</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#domain">Domain description</a></li>
-                <li><a href="#Business-cases">Business Cases</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#details">Details</a></li>
-            </ul>
         </div>
     </nav>
 
     <header class="hero">
         <h1>Hello, I am Ganesh Naik</h1>
-        <h2>Computer Science Engineer</h2>
         <p><i>~Ready to debug challenges and deploy impactful solutions~</i></p>
     </header>
 
     <main class="section">
-        <section id="AboutMe" class="sub-section">
-            <h2>About Me</h2>
-            <p id="aboutme-info">
-                I am a dedicated computer science student with a strong foundation in Data Structures, Databases, Networking and Development with a focus on building innovative, reliable and efficient solutions.
-
-                Fascinated by Netflix’s work in personalization recommendations, interactive storytelling and AI-driven content systems, I aim to contribute to technologies that redefine entertainment and create meaningful, global impact through seamless and intelligent user experiences.
-            </p>
-        </section>
-
-        <section class="sub-section">
-            <h2>Education</h2>
-            <div id="education" class="education-content">
-                <div class="education-item">
-                    <h3>Bachelor of Engineering in Computer Science</h3>
-                    <p class="edu-institute">KLE Technological University</p>
-                    <p class="edu-institute">Hubballi, Karnataka</p>
-                    <p class="edu-year">Graduation: 2026</p>
-                    <p class="edu-grade">CGPA: 8.18</p>
-                </div>
+        <section>
+            <h2>Explore My Portfolio</h2>
+            <div class="nav-buttons">
+                <a href="history.html" class="nav-button"> History of Netflix</a>
+                <a href="portfolio-details.html" class="nav-button">📋 Portfolio Details</a>
+                <a href="education.html" class="nav-button">🎓 Education</a>
+                <a href="skills.html" class="nav-button">💻 Skills</a>
             </div>
         </section>
 
-        <section id="skills" class="sub-section">
-            <h2>Skills</h2>
-            <div class="skills-wrapper">
-                <div class="skill-box">
-                    <h3>Technical Skills</h3>
-                    <ul class="project2">
-                        <li>C/C++</li>
-                        <li>Python</li>
-                        <li>HTML/CSS</li>
-                        <li>SQL</li>
-                        <li>Machine Learning</li>
-                    </ul>
-                </div>
-                <div class="skill-box">
-                    <h3>Soft Skills</h3>
-                    <ul class="project2">
-                        <li>Adaptability</li>
-                        <li>Teamwork</li>
-                        <li>Problem Solving</li>
-                        <li>Leadership</li>
-                        <li>Project Management</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="sub-section">
+        <section id="projects">
             <h2>Projects</h2>
-            <ul class="project">
-                <li class="project-item">
+            <div class="project-grid">
+                
+                <div class="project-item">
                     <span class="project-number">1</span>
-                    <h3 class="project-title">Layer-wise Relevance Propagation For Classifying Brain MRI Images</h3>
-                    <p class="project-desc">Developed a deep learning framework that utilizes ResNet18 to classify MRI scans into four tumor categories, while Layer-wise Relevance Propagation (LRP) enhances interpretability by generating standard, overlay, and pixel-wise heatmaps.</p>
-                    <p>Achieved 85% classification accuracy with interpretable diagnostics</p>
-                    <p>Published research paper</p>
-                    <div class="tech-used">
-                        <span class="tech-head">Technologies Used:</span>
-                        <span class="tech-item">ResNet18</span>
-                        <span class="tech-item">Layer-wise Relevance Propagation (LRP)</span>
-                        <span class="tech-item">Machine Learning</span>
-                        <span class="tech-item">Python</span>
-                    </div>
-                    <div>
-                        <br>
-                        <a href="https://drive.google.com/file/d/182KNwHkfKSYj3roSSp6fDbLcR_xQoPhN/view" target="_blank" class="project-link">Watch Research Paper Now</a>
-                    </div>
-                </li>
-                <li class="project-item">
+                    <img src="videos\LRP_project1.gif" alt="Project 1 GIF">
+                    <p class="project-desc">Classifying Brain MRI Images using Layer-wise Relevance Propagation and ResNet18.</p>
+                    <a href="project1.html" class="project-link">Watch Now</a>
+                </div>
+                <div class="project-item">
                     <span class="project-number">2</span>
-                    <h3 class="project-title">Electronic Voting Machine</h3>
-                    <p class="project-desc">
-                        Electronic Voting Machine using AVR Microcontroller
-
-                        Designed and developed a secure Electronic Voting Machine using an AVR ATmega microcontroller, programmed entirely in Embedded C. The system supports voter authentication via a 4-digit PIN using a keypad, with real-time feedback provided through an LCD display.</p>
-                    <p>Key Highlights:</p>
-                    <p>Secure Authentication: Masked PIN entry with validation and lockout for invalid attempts.</p>
-                    <p>Voting Interface: User-friendly selection and confirmation process.</p>
-                    <p>Result Security: Access to final vote count restricted via a master key for authorized personnel.</p>
-                    <p>Robust Logic Handling: Supports tie-breaking logic and various edge cases to ensure reliability.</p>
-                    <div class="tech-used">
-                        <span class="tech-head">Technologies Used:</span>
-                        <span class="tech-item">Atmel Studio</span>
-                        <span class="tech-item">AVR ATmega16</span>
-                        <span class="tech-item">Keypad interfacing</span>
-                        <span class="tech-item">LCD display integration</span>
-                    </div>
-                    <br>
-                    <div>
-                        <a href="https://github.com/G4016" target="_blank" class="project-link">Watch Project on GitHub Now</a>
-                    </div>
-                </li>
-                <li class="project-item">
+                    <img src="videos/project2.gif" alt="Project 2 GIF">
+                    <p class="project-desc">Archaeological Image Restoration using U-Net-based GAN.</p>
+                    <a href="project2.html" class="project-link">Watch Now</a>
+                </div>
+                <div class="project-item">
                     <span class="project-number">3</span>
-                    <h3 class="project-title">Deep Learning Techniques for Archaeological Image Restoration</h3>
-                    <p class="project-desc">
-                        Developed a U-Net-based Generative Adversarial Network (GAN) framework to reconstruct damaged temple images, ensuring the preservation of intricate architectural details. A custom dataset of masked images was created, and the model was trained to reconstruct missing sections while balancing adversarial and reconstruction losses for realistic outputs</p>
-                    <p>Achieved Structural Similarity Index Measure (SSIM) score of 0.7128</p>
-                    <div class="tech-used">
-                        <span class="tech-head">Technologies Used:</span>
-                        <span class="tech-item">U-NET</span>
-                        <span class="tech-item">GAN</span>
-                        <span class="tech-item">Deep Learning</span>
-                    </div>
-                    <div>
-                        <br>
-                        <a href="https://drive.google.com/file/d/1Eayr9R4nt_PTrYgcguWMfPDH3AfnObbM/view" target="_blank" class="project-link">Watch Research Paper Now</a>
-                    </div>
-                </li>
-                <li class="project-item">
+                    <img src="videos/project3.gif" alt="Project 3 GIF">
+                    <p class="project-desc">Prompt to Perfection</p>
+                    <a href="project3.html" class="project-link">Watch Now</a>
+                </div>
+                <div class="project-item">
                     <span class="project-number">4</span>
-                    <h3 class="project-title">Yellove Bus Booking Assistant</h3>
-                    <p class="project-desc">
-                        Designed and implemented a bus seat booking system that allows users to register, login, book a ticket based on source destination of course on availability of seats and accordingly displays list of travelling passengers.</p>
-                    <p>Key features:</p>
-                    <p>Booking Management: (1) Checks for already-booked seats.<br>
-                        (2) Displays available buses and their timings.<br>
-                        (3) Manages user login, logout, and ticket display.<br>
-                        Student Discount: Gives a discount of 10% of the trip expense if user claims to be a student.</p>
-                    <div class="tech-used">
-                        <span class="tech-head">Techniques Used:</span>
-                        <span class="tech-item">Object Oriented Programming</span>
-                        <span class="tech-item">C++</span>
-                        <span class="tech-item">Classes and Objects</span>
-                        <span class="tech-item">Inheritance</span>
-                        <span class="tech-item">Exception Handling</span>
-                        <span class="tech-item">Virtual Functions & Polymorphism</span>
-                    </div>
-                </li>
-            </ul>
+                    <img src="videos/project4.gif" alt="Project 6 GIF">
+                    <p class="project-desc"> SymptoScan </p>
+                    <a href="project4.html" class="project-link">Watch Now</a>
+                </div>
+                <div class="project-item">
+                    <span class="project-number">5</span>
+                    <img src="videos/project5.gif" alt="Project 4 GIF">
+                    <p class="project-desc"> SNE : Sabka Neta Ek </p>
+                    <a href="project4.html" class="project-link">Watch Now</a>
+                </div>
+                <div class="project-item">
+                    <span class="project-number">6</span>
+                    <img src="videos\project6.gif" alt="Project 5 GIF">
+                    <p class="project-desc">Yellove Bus Booking Assistant</p>
+                    <a href="project5.html" class="project-link">Watch Now</a>
+                </div>
+                
+            </div>
         </section>
 
-        <section id="domain" class="sub-section">
-            <h2>Domain - Netflix</h2>
-            <p>
-                Netflix is a leading global streaming entertainment service offering a wide variety of TV shows, movies, documentaries, and original content to over 230 million subscribers worldwide. Known for its innovation in streaming technology, content creation, and personalized recommendations, Netflix continues to transform the way people consume entertainment. By leveraging cutting-edge machine learning, big data analytics, and creative content production, Netflix delivers an immersive, customized viewing experience across various platforms, including smart TVs, mobile devices, and gaming consoles.
-            </p>
-        </section>
-
-        <section id="Business-cases" class="sub-section">
+        <section id="business-cases">
             <h2>Business Cases</h2>
-            <div class="use-case-list">
-                <div class="use-case-item">
-                    <h3>Hyper-Personalized AI Content Discovery Engine</h3>
-                    <p>
-                        Netflix’s recommendation engine is evolving into a dynamic, AI-powered personalization system that delivers content tailored precisely to each user’s unique preferences, mood, and viewing habits. By leveraging vast amounts of behavioral data and advanced deep learning models, the platform continuously refines its understanding of each viewer. This hyper-personalized approach enhances engagement, boosts retention, and ensures that users always discover content that resonates with them, creating a truly individualized entertainment experience.</p>
+            <div class="business-case-grid">
+                <div class="business-case-item">
+                    <span class="business-case-number">1</span>
+                    <img src="videos/bc1.gif" alt="Business Case 1 GIF">
+                    <p class="business-case-desc">Top 10 Movies in India</p>
+                    <a href="business-case1.html" class="business-case-link">Watch Now</a>
                 </div>
-                <div class="use-case-item">
-                    <h3>Interactive Storytelling Universe with Adaptive Narratives</h3>
-                    <p>
-                        Building upon the success of interactive titles like Black Mirror: Bandersnatch, Netflix is expanding its interactive storytelling format into a broader universe of choose-your-own-adventure experiences. These narratives dynamically adapt based on viewer choices, allowing users to influence plotlines, character arcs, and endings. By integrating gaming elements and real-time feedback into cinematic content, Netflix is pioneering a new genre of digital storytelling that deepens immersion and transforms passive viewing into active participation.</p>
+                <div class="business-case-item">
+                    <span class="business-case-number">2</span>
+                    <img src="videos/bc2.gif" alt="Business Case 2 GIF">
+                    <p class="business-case-desc"> Recommended TV Shows and Movies </p>
+                    <a href="business-case2.html" class="business-case-link">Watch Now</a>
                 </div>
-                <div class="use-case-item">
-                    <h3>Predictive AI-Driven Content Studio</h3>
-                    <p>
-                        Netflix is leveraging predictive analytics and machine learning to revolutionize content production and development. By analyzing global viewing trends, audience preferences, and performance data, the platform can forecast which genres, themes, and narratives are likely to succeed. AI tools assist in various stages of content creation from scriptwriting and editing to visual effects resulting in a more efficient and data-driven production pipeline. This approach increases the success rate of original titles while reducing production risks and costs.
-                    </p>
+                <div class="business-case-item">
+                    <span class="business-case-number">3</span>
+                    <img src="videos/bc3.gif" alt="Business Case 3 GIF">
+                    <p class="business-case-desc"> Anime, Romantic, Kdrama, TV Sci-Fi Content Categorization </p>
+                    <a href="business-case3.html" class="business-case-link">Watch Now</a>
                 </div>
-                <div class="use-case-item">
-                    <h3>Global Smart Streaming Network</h3>
-                    <p>
-                        To ensure seamless viewing experiences across devices and regions, Netflix has developed a global smart streaming infrastructure optimized by cloud computing and adaptive bitrate technology. The platform intelligently adjusts video quality based on user bandwidth and device capability, minimizing buffering and maximizing playback quality. With ongoing exploration into 5G and edge computing, Netflix aims to deliver even faster and more reliable streaming, particularly in areas with lower internet connectivity, reinforcing its reputation for best-in-class user experience.</p>
+                <div class="business-case-item">
+                    <span class="business-case-number">4</span>
+                    <img src="videos/bc4.gif" alt="Business Case 4 GIF">
+                    <p class="business-case-desc"> Series Episode and Season Management </p>
+                    <a href="business-case4.html" class="business-case-link">Watch Now</a>
+                </div>
+                <div class="business-case-item">
+                    <span class="business-case-number">5</span>
+                    <img src="images/moments.jpg" alt="Business Case 5 GIF">
+                    <p class="business-case-desc">Moments Feature with Bookmarking</p>
+                    <a href="business-case5.html" class="business-case-link">Watch Now</a>
+                </div>
+                <div class="business-case-item">
+                    <span class="business-case-number">6</span>
+                    <img src="videos/speed.gif" alt="Business Case 6 GIF">
+                    <p class="business-case-desc">Playback Speed Adjustment</p>
+                    <a href="business-case6.html" class="business-case-link">Watch Now</a>
+                </div>
+                <div class="business-case-item">
+                    <span class="business-case-number">7</span>
+                    <img src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" alt="Business Case 7 GIF">
+                    <p class="business-case-desc">Audio and Subtitles Switching</p>
+                    <a href="business-case7.html" class="business-case-link">Watch Now</a>
+                </div>
+                <div class="business-case-item">
+                    <span class="business-case-number">8</span>
+                    <img src="https://media.giphy.com/media/l0Iyl55kTeh71nTWw/giphy.gif" alt="Business Case 8 GIF">
+                    <p class="business-case-desc">Screen Lock Feature</p>
+                    <a href="business-case8.html" class="business-case-link">Watch Now</a>
+                </div>
+                <div class="business-case-item">
+                    <span class="business-case-number">9</span>
+                    <img src="https://media.giphy.com/media/26ufnwz3wDUli7GU0/giphy.gif" alt="Business Case 9 GIF">
+                    <p class="business-case-desc">Smart Downloads</p>
+                    <a href="business-case9.html" class="business-case-link">Watch Now</a>
+                </div>
+                <div class="business-case-item">
+                    <span class="business-case-number">10</span>
+                    <img src="videos/bc10.gif" alt="Business Case 10 GIF">
+                    <p class="business-case-desc">New and Hot Notifications</p>
+                    <a href="business-case10.html" class="business-case-link">Watch Now</a>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="sub-section">
+        <section id="contact">
             <h2>Contact Me</h2>
             <div class="contact-buttons">
                 <a href="https://github.com/G4016" target="_blank" class="contact-button">
@@ -227,40 +494,11 @@
                 <button type="submit">Send Message</button>
             </form>
         </section>
-
-        <section id="details" class="sub-section">
-            <h2>Portfolio Details</h2>
-            <div class="details-list">
-                <div class="detail-item">
-                    <dt>Course Name</dt>
-                    <dd>Algorithmic Problem Solving</dd>
-                </div>
-                <div class="detail-item">
-                    <dt>Course Code</dt>
-                    <dd>24ECSE309</dd>
-                </div>
-                <div class="detail-item">
-                    <dt>Name</dt>
-                    <dd>Ganesh Naik</dd>
-                </div>
-                <div class="detail-item">
-                    <dt>SRN</dt>
-                    <dd>01FE22BCS194</dd>
-                </div>
-                <div class="detail-item">
-                    <dt>Course Instructor</dt>
-                    <dd>Prakash Hegade</dd>
-                </div>
-                <div class="detail-item">
-                    <dt>University</dt>
-                    <dd>KLE Technological University</dd>
-                </div>
-                <div class="detail-item">
-                    <dt>Domain</dt>
-                    <dd>Netflix</dd>
-                </div>
-            </div>
-        </section>
     </main>
+
+    <div class="nav-arrows">
+        <a href="business-case12.html" class="nav-arrow">← Previous</a>
+        <a href="portfolio-details.html" class="nav-arrow">Next →</a>
+    </div>
 </body>
 </html>
